@@ -1,0 +1,129 @@
+body { 
+	font-family: arial; 
+	font-size: 10pt; 
+	}
+	
+table { 
+	font-size: 10pt; 
+	margin: 0 auto;
+	}
+
+h2 {
+	text-align: center;
+}
+
+.h2title {
+	margin-bottom: 20px;
+}
+#border { 
+	border: 2px solid #999; 
+	background: #CCC; 
+	padding: 15px; 
+	margin: 0 auto; 
+	width: 300px;
+}
+
+.contentDetails {
+	border-left: 1px solid #CCC;	
+	padding-left: 30px
+}
+.addressTable{
+	margin-left:0px
+}
+.navbar {
+	padding-bottom: 20px;
+	border: 0;
+	border-radius: 0;
+	font-size: 12px;
+	letter-spacing: 3px;
+	margin-bottom: 0px;
+ }
+.navbar-nav {  
+  	padding-top: 10px;
+	padding-bottom: 0px;
+}
+.navbar-nav  li a:hover {
+	color: #1abc9c !important;
+}
+
+.slide {
+	interval : 8000;
+}
+.carousel-inner {
+    max-height: 600px !important;
+}
+.carousel-inner img {
+/*    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%); /* make all photos black and white */ 
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+}
+.carousel-caption {
+	background: rgba(232,173,37,0.8);
+	top: 10%;
+	left: 10%;
+	width:500px;
+	bottom: auto;
+	padding: 0 20px 10px 20px;
+}
+.cap {
+	right: 10% !important;
+	left: auto !important;
+}
+.carousel-caption h3 {
+    color: #fff !important;
+}
+.carousel-caption p {
+    color: #fff !important;
+	font-size: 16px;
+}
+@media (max-width: 600px) {
+   .carousel-caption {
+    display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+  }
+}
+.carousel-control.right {
+
+	top: 0% !important;
+	right: 15% !important;
+	background-image:none;
+}
+
+.carousel-control.left {
+
+	top: 0% !important;
+	left: 15% !important;
+	background-image:none;
+}
+.container-fluid {
+    padding: 50px 20px;
+} 
+.bg-0 {
+    background: #fff;
+    color: #bdbdbd;
+    padding-top: 70px;
+}
+.panel-body {
+	border: 2px solid #999; 
+	background: #CCC; 
+	padding: 15px;
+}
+.panel-body2 {
+	border: 2px solid #999; 
+	background: #fff; 
+	padding: 15px;
+}
+.rowpad {
+	padding: 5px
+}
+.row {
+	margin-top: 10px
+}
+.bg-1 {
+    background: #fff;
+    color: #303030;
+    padding-top: 60px;
+	 margin-top:20px;
+}
+
+

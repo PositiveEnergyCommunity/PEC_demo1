@@ -1,0 +1,142 @@
+<div class="container">
+	
+	<div class="row section">
+	<div class="col-sm-2">
+		<div class="row section h2title">
+			<div class="col-sm-3"></div>	
+			<div class="col-sm-6">
+				<h2> Pools List </h2>
+			</div>
+			<div class="col-sm-2 text-right">
+				<h2><a href="#newpool" ><span class="glyphicon glyphicon-plus"></span></a></h2>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		
+		<div class="row section">
+			<table class="table">
+				<tbody>
+					<tr ng-repeat = "x in nameList"> <td>{{x}}</td></tr> 
+				</tbody>
+			</table>
+		</div>
+	</div>	
+	
+	
+	<div class="col-sm-10 contentDetails">
+		
+		<div class="row section h2title">
+			<div class="col-sm-3"></div>	
+			<div class="col-sm-6">
+				<h2> {{pool.name}} </h2>
+			</div>
+			<div class="col-sm-2 text-right">
+				<h2><a href="#editpool"><span class="glyphicon glyphicon-edit"></span></a></h2>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		
+		<div class="row section">	
+			<div class="col-sm-6">
+				<p>Date = {{ date | date:'EEEE, MMMM d, y - HH:mm:ss' }}</p>
+			</div>
+		
+			<div class="col-sm-6 text-right">
+				<p>Pool valuation = {{ pool.investValuation | number }} {{pool.currency}}</p>
+				<p>Cash account = {{ pool.cashAccount | number }} {{pool.currency}}</p>
+			</div>
+		</div>
+		
+		<div class="row section">	
+			<div class="col-sm-5">		
+				<div class="panel panel-default">
+				<div class="panel-body2">
+					<table class="table table-condensed">
+						<tbody>
+							<tr>
+								<td>Legal name</td> <td>{{pool.identity.legalName}}</td>
+							</tr>
+							<tr>
+								<td>Form</td> <td>{{pool.identity.legalForm}}</td>
+							</tr>
+							<tr>
+								<td>Registration Nb.</td> <td>{{pool.identity.registrationNb}}</td>
+							</tr>
+							<tr>
+								<td>Date of creation</td> <td>{{pool.identity.dateOfCreation}}</td>
+							</tr>
+							<tr>
+								<td>Domiciliation</td>
+								<td>
+									<table class="addressTable">
+									<tbody>
+										<tr><td> {{pool.identity.domiciliation.street}} </td></tr>
+										<tr><td> {{pool.identity.domiciliation.zipcode}}, {{pool.identity.domiciliation.city}} </td></tr>
+										<tr><td> {{pool.identity.domiciliation.province}}, {{pool.identity.domiciliation.country}} </td></tr>
+									</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				</div>
+			</div>
+			
+			<div class="col-sm-7">
+				<div class="panel panel-default">
+				<div class="panel-body2">
+					<table class="table">
+						<thead>
+							<tr>
+							  <th> Token</th>
+							  <th> Quantity</th>
+							  <th class = "text-center">Unit Price</th>
+							  <th class = "text-center">Valuation</th>
+							</tr>
+						 </thead>
+						<tbody>
+							<tr ng-repeat = "y in pool.tokens"> 
+								<td>{{y.name}}</td>
+								<td>{{y.supply}}</td>
+								<td class = "text-right">{{y.value}} {{pool.currency}}</td>
+								<td class = "text-right">{{y.supply*y.value | number:2}} {{pool.currency}}</td></tr> 
+						</tbody>
+					</table>
+				</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="row section">	
+			<div class="col-sm-12 text-right">
+				<div id="exTab2">	
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a  href="" data-toggle="tab">Chart</a>
+						</li>
+						<li>
+							<a href="" data-toggle="tab">Market</a>
+						</li>
+						<li>
+							<a href="" data-toggle="tab">News</a>
+						</li>
+						<li>
+							<a href="" data-toggle="tab">Historical Data</a>
+						</li>
+					</ul>
+					<div class="tab-content ">
+						<div class=" active" id="1">
+							<img src={{image1.src}} class="img-rounded" alt={{image1.alt}} style="width:100%">
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	</div>
+	
+</div>

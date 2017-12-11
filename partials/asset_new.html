@@ -1,0 +1,282 @@
+<div class="container">
+	
+	<div class="row section">
+		<div class="col-sm-3"></div>	
+		<div class="col-sm-6">
+			<h2> {{pagename}} </h2>
+		</div>
+		<div class="col-sm-2 text-right">		</div>
+		<div class="col-sm-1"></div>
+	</div>
+
+	<div class="form-group">
+	<div class="row section">
+		
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<div class="panel panel-default">
+			<div class="panel-heading">Project details</div>
+			<div class="panel-body">
+				<div class="row section rowpad">
+					<div class="col-xs-4">Project name:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="name"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+				
+				<div class="row section rowpad">	
+					<div class="col-xs-4">Developer:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="developer"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Location:</div>	
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">Street:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="address.street"></input>  
+					</div>
+				</div>
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">Zipcode:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="address.zipcode"></input>  
+					</div>
+				</div>
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">City:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="address.city"></input>  
+					</div>
+				</div>
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">Province:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="address.province"></input>  
+					</div>
+				</div>
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">Country:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="address.country"></input>  
+					</div>
+				</div>
+				
+				<div class="row section rowpad">	
+					<div class="col-xs-4">Start date:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="dateOfCreation"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+
+				<div class="row section rowpad">	
+					<div class="col-xs-4">Commission date:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="dateOfCommission"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+			
+			</div>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>	
+		
+	<div class="row section">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<div class="panel panel-default">
+			<div class="panel-heading">Energy asset details</div>
+			<div class="panel-body">
+			
+				<div class="row section rowpad">
+					<div class="col-xs-4">Type:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="energyType"></input>  
+					</div>
+				</div>
+
+				<div class="row section rowpad">
+					<div class="col-xs-4">Installed Capacity:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="installedCapacity"></input>  
+					</div>
+					<div class="col-xs-1">(kWp)</div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Life Duration:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="lifeDuration"></input>  
+					</div>
+					<div class="col-xs-1">(year)</div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Specific Yield:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="specificYield"></input>  
+					</div>
+					<div class="col-xs-1">(kWh/kWp/year)</div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Degression:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="degression"></input>  
+					</div>
+					<div class="col-xs-1">(%)</div>
+				</div>
+
+			</div>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+	
+	<div class="row section">
+		
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<div class="panel panel-default">
+			<div class="panel-heading">Project costs</div>
+			<div class="panel-body">
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Currency:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="currency"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Project costs:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="projectCosts.investmentCost"></input>  
+					</div>
+					<div class="col-xs-1">({{currency}})</div>
+				</div>
+				
+				<div class="row section rowpad">	
+					<div class="col-xs-4">Setup costs:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="projectCosts.setupCost"></input>  
+					</div>
+					<div class="col-xs-1">({{currency}})</div>
+				</div>
+				
+				<div class="row section rowpad">	
+					<div class="col-xs-4">Consulting costs:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="projectCosts.consultingCost"></input>  
+					</div>
+					<div class="col-xs-1">({{currency}})</div>
+				</div>
+			
+			</div>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+	
+	<div class="row section">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<div class="panel panel-default">
+			<div class="panel-heading">Financing</div>
+			<div class="panel-body">
+			
+				<div class="row section rowpad">
+					<div class="col-xs-4">Equity:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="projectFinancing.equity"></input>  
+					</div>
+					<div class="col-xs-1">(%)</div>
+				</div>
+
+				<div class="row section rowpad">
+					<div class="col-xs-4">Senior loan:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="projectFinancing.seniorLoan"></input>  
+					</div>
+					<div class="col-xs-1">(%)</div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">Duration: </div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="seniorLoan.duration"></input>  
+					</div>
+					<div class="col-xs-1">(year)</div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">Interest rate:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="seniorLoan.interestRate"></input>  
+					</div>
+					<div class="col-xs-1">(%)</div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Junior loan:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="projectFinancing.juniorLoan"></input>  
+					</div>
+					<div class="col-xs-1">(%)</div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">Duration: </div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="juniorLoan.duration"></input>  
+					</div>
+					<div class="col-xs-1">(year)</div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">Interest rate:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="juniorLoan.interestRate"></input>  
+					</div>
+					<div class="col-xs-1">(%)</div>
+				</div>
+
+			</div>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+	
+	<div class="row section">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<div class="col-xs-12 text-center">
+				<button id="btn-start" type="button" class="btn btn-default" 
+						ng-click="createOrUpdate()">{{buttonlabel}}</button>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>		
+	</div>
+	
+	</div>
+			
+</div>

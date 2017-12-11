@@ -1,0 +1,217 @@
+<div class="container">
+	
+	<div class="row section">
+	<div class="col-sm-2">
+		<div class="row section h2title">
+			<div class="col-sm-3"></div>	
+			<div class="col-sm-6">
+				<h2> Assets List </h2>
+			</div>
+			<div class="col-sm-2 text-right">
+				<h2><a href="#newasset" ><span class="glyphicon glyphicon-plus"></span></a></h2>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		
+		<div class="row section">
+			<table class="table">
+				<tbody>
+					<tr ng-repeat = "x in nameList"> <td>{{x}}</td></tr>
+				</tbody>
+			</table>
+		</div>
+		
+	</div>	
+	
+	
+	<div class="col-sm-10 contentDetails">
+		
+		<div class="row section h2title">
+			<div class="col-sm-3"></div>	
+			<div class="col-sm-6">
+				<h2> {{name}} </h2>
+			</div>
+			<div class="col-sm-2 text-right">
+				<h2><a href="#editasset"><span class="glyphicon glyphicon-edit"></span></a></h2>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		
+		<div class="row section">	
+			<div class="col-sm-6">
+				<p>Date = {{ date | date:'EEEE, MMMM d, y - HH:mm:ss' }}</p>
+			</div>
+		
+			<div class="col-sm-6 text-right">
+			</div>
+		</div>
+		
+		<div class="row section">	
+			<div class="col-sm-6">
+				<div class="panel panel-default">
+				<div class="panel-heading">Project details</div>
+				<div class="panel-body2">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td>Developer</td>
+								<td>{{developer}}</td>
+							</tr>
+							<tr>
+								<td>Location</td>
+								<td>
+									<table class="addressTable">
+									<tbody>
+										<tr><td> {{address.street}} </td></tr>
+										<tr><td> {{address.zipcode}}, {{address.city}} </td></tr>
+										<tr><td> {{address.province}}, {{address.country}} </td></tr>
+									</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								 <td>Start date</td>
+								 <td>{{dateOfCreation}}</td>
+							</tr>
+							<tr>
+								 <td>Commission date</td>
+								 <td>{{dateOfCommission}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				</div>
+			</div>
+		
+			<div class="col-sm-6">
+				<div class="panel panel-default">
+				<div class="panel-heading">Energy asset details</div>
+				<div class="panel-body2">
+					<table class="table">
+						 <tbody>
+							<tr>
+								 <td>Type</td>
+								 <td>{{energyType}}</td>
+							</tr>
+							<tr>
+								 <td>Installed Capacity</td>
+								 <td>{{installedCapacity | number}} kWp </td>
+							</tr>
+							<tr>
+								<td>Life Duration</td>
+								<td>{{lifeDuration}} years</td>
+							</tr>
+							<tr>
+								 <td>Specific Yield</td>
+								 <td>{{specificYield | number}} kWh/kWp/year</td>
+							</tr>
+							<tr>
+								 <td>Degression</td>
+								 <td>{{degression}}%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row section">
+			<div class="col-sm-6">
+				<div class="panel panel-default">
+				<div class="panel-heading">Project costs</div>
+				<div class="panel-body2">
+					<table class="table">
+						 <tbody>
+							<tr>
+								 <td>Project costs</td>
+								 <td align="right">{{projectCosts.investmentCost | number}} {{currency}}</td>
+								 <td> </td>
+							</tr>
+							<tr>
+								 <td>Setup costs</td>
+								 <td align="right">{{projectCosts.setupCost | number}} {{currency}}</td>
+								 <td> </td>
+							</tr>
+							<tr>
+								 <td>Consulting costs</td>
+								 <td align="right">{{projectCosts.consultingCost | number}} {{currency}}</td>
+								 <td> </td>
+							</tr>
+							<tr>
+								 <td>Total</td>
+								 <td align="right">{{totalCosts | number}} {{currency}}</td>
+								 <td> </td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				</div>
+			</div>
+			
+			<div class="col-sm-6">
+				<div class="panel panel-default">
+				<div class="panel-heading">Project Financing</div>
+				<div class="panel-body2">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td>Equity</td>
+								<td align="right">{{projectFinancing.equity}}%</td>
+								<td align="right">{{financing.equityAmount | number}} {{currency}}</td>
+								<td> </td>
+								<td> </td>
+							</tr>
+							<tr>
+								<td>Senior Loan</td>
+								<td align="right">{{projectFinancing.seniorLoan}}%</td>
+								<td align="right">{{seniorLoan.amount | number}} {{currency}}</td>
+								<td>{{seniorLoan.duration | number}} months</td>
+								<td>{{seniorLoan.interestRate}}%</td>
+							</tr>
+							<tr>
+								<td>Junior Loan </td>
+								<td align="right">{{projectFinancing.juniorLoan}}%</td>
+								<td align="right">{{juniorLoan.amount | number}} {{currency}}</td>
+								<td>{{juniorLoan.duration | number}} months</td>
+								<td>{{juniorLoan.interestRate}}%</td>
+							</tr>
+							<tr>
+								<td>Total</td>
+								<td align="right">{{financing.totalPerCent}}%</td>
+								<td align="right">{{financing.total | number}} {{currency}}</td>
+								<td> </td>
+								<td> </td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				</div>
+			</div>
+		</div>	
+
+		<div class="row section">	
+			<div class="col-sm-12">
+				<div class="panel panel-default">
+				<div class="panel-heading">Project Summary</div>
+				<div class="panel-body2">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td><img src={{images.image1.src}} class="img-rounded" alt={{images.image1.alt}} style="width:100%"></td>
+								<td><img src={{images.image2.src}} class="img-rounded" alt={{images.image2.alt}} style="width:100%"></td>
+							</tr>
+							<tr>
+								<td><img src={{images.image3.src}} class="img-rounded" alt={{images.image3.alt}} style="width:100%"></td>
+								<td><img src={{images.image4.src}} class="img-rounded" alt={{images.image4.alt}} style="width:100%"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+</div>
