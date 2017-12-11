@@ -1,0 +1,168 @@
+<div class="container">
+
+	<div class="row section">
+		<div class="col-sm-3"></div>	
+		<div class="col-sm-6">
+			<h2> Update Profile </h2>
+		</div>
+		<div class="col-sm-2 text-right">		</div>
+		<div class="col-sm-1"></div>
+	</div>
+	
+	<div class="form-group">
+	<div class="row section">
+		
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<div class="panel panel-default">
+			<div class="panel-heading">Personal details</div>
+			<div class="panel-body">
+				<div class="row section rowpad">
+					<div class="col-xs-4">Title:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="user.title"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+				
+				<div class="row section rowpad">	
+					<div class="col-xs-4">Firstname</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="user.firstname"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Lastname:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="user.lastname"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Email:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="user.email"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Phone:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="user.phone"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Profile:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="user.profile"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+				
+			</div>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>	
+		
+	<div class="row section">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<div class="panel panel-default">
+			<div class="panel-heading">Company details</div>
+			<div class="panel-body">
+			
+				<div class="row section rowpad">
+					<div class="col-xs-4">Legal name:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="company.identity.legalName"></input>  
+					</div>
+				</div>
+
+				<div class="row section rowpad">
+					<div class="col-xs-4">legal form:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="company.identity.legalForm"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Registration Nb:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="company.identity.registrationNb"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Date of creation</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="company.identity.dateOfCreation"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Domiciliation:</div>	
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">Street:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="company.identity.domiciliation.street"></input>  
+					</div>
+				</div>
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">Zipcode:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="company.identity.domiciliation.zipcode"></input>  
+					</div>
+				</div>
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">City:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="company.identity.domiciliation.city"></input>  
+					</div>
+				</div>
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">Province:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="company.identity.domiciliation.province"></input>  
+					</div>
+				</div>
+				<div class="row section rowpad">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">Country:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left"  ng-model="company.identity.domiciliation.country"></input>  
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+
+	<div class="row section">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<div class="col-xs-12 text-center">
+				<button id="btn-start" type="button" class="btn btn-default" 
+						ng-click="register()">UPDATE</button>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>		
+	</div>
+
+</div>

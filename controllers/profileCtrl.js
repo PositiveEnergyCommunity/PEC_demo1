@@ -1,14 +1,46 @@
 angular.module("pecDemo")
 
-.controller('profileCtrl', function($scope, $http, $routeParams, $localStorage) {
+.controller('profileCtrl', function($scope, $http, $routeParams, $localStorage, $interval) {
    $scope.message = "This page will be used to display login or register form";
-	$scope.email;
-	$scope.firstname;
-	$scope.lastname;
-	$scope.title;
-	$scope.phone;
-	$scope.password;;
-	$scope.passwordConf;
+	
+	$scope.user = {
+		email: 'warren@gold.com',
+		firstname: 'Warren',
+		lastname: 'Buffet',
+		title: 'Gourou',
+		phone: '8888 8888',
+		password: 'warren',
+		profile: 'Investor',
+	}
+	
+	$scope.passwordConf = 'warren';
+		
+	$scope.company = {
+		identity: {
+			legalName: 'J Safra Sarasin Ltd',
+			legalForm: 'Ltd.',
+			registrationNb: '1234567890',
+			dateOfCreation: '01/01/1841',
+			domiciliation: {
+				street: '8 Marina View #25-01 Asia Square Tower 1',
+				zipcode: '018960',
+				city: 'Singapore',
+				province: '',
+				country: 'Singapore'
+			}
+		},
+		name: 'J Safra Sarasin',
+		description: 'Private Banking',
+		poolManager: 'Jack Daniels',
+		currency: 'USD'
+	};
+	
+	
+	var tick = function() {
+		$scope.date = Date.now();
+	}
+	tick();
+	$interval(tick, 1000);
 	
 	//-----------------------------------------------------------------------------
 	// Function init()
@@ -52,16 +84,16 @@ angular.module("pecDemo")
 		
 		var inData = {
 			'id': null,
-			'title': $scope.title,
-			'firstname': $scope.firstname,
-			'lastname': $scope.lastname,
-			'email': $scope.email, 
-			'password': $scope.password,
+			'title': $scope.user.title,
+			'firstname': $scope.user.firstname,
+			'lastname': $scope.user.lastname,
+			'email': $scope.user.email, 
+			'password': $scope.user.password,
 			'passwordConf': $scope.passwordConf,
-			'phone': $scope.phone,
-			'userStatus': $scope.userStatus};
+			'phone': $scope.user.phone,
+			'userStatus': $scope.user.profile};
 		
-		$http.post("http://localhost:3000/user/", inData).then(function (data, status, headers, config) { 
+		$http.put("http://localhost:3000/user/", inData).then(function (data, status, headers, config) { 
 			console.log("[register]- data = " + data);
 			console.log("[register]- status = " + status);
 			console.log("[register]- headers = " + headers);

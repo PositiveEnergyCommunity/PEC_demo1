@@ -1,61 +1,86 @@
 <div class="container">
-	<h2> Profile</h2>
 	
-	<div class="row section">
+	<div class="row section h2title">
 		<div class="col-sm-3"></div>	
-
+		<div class="col-sm-6">
+			<h2> {{user.title}} {{user.firstname}} {{user.lastname}}</h2>
+		</div>
+		<div class="col-sm-2 text-right">
+			<h2><a href="#editprofile"><span class="glyphicon glyphicon-edit"></span></a></h2>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+	
+	
+	<div class="row section">	
+		<div class="col-sm-6">
+			<p>Date = {{ date | date:'EEEE, MMMM d, y - HH:mm:ss' }}</p>
+		</div>
+		
+		<div class="col-sm-6 text-right">
+		</div>
+	</div>
+	
+	<div class="row section">	
 		<div class="col-sm-6">
 			<div class="panel panel-default">
+			<div class="panel-heading">Personal details</div>
 			<div class="panel-body2">
-			<div class="form-group">
-				
-				<div class="row section rowpad">
-					<div class="col-xs-4">Title:</div>
-					<div class="col-xs-8">
-						<input type="text" class="form-control text-left" ng-model="title"> </input> 
-					</div>
-				</div>
-				
-				<div class="row section rowpad">
-					<div class="col-xs-4">Firstname*:</div>
-					<div class="col-xs-8">
-						<input type="text" class="form-control text-left" ng-model="firstname"></input>  
-					</div>
-				</div>
-				
-				<div class="row section rowpad">
-					<div class="col-xs-4">Lastname*:</div>
-					<div class="col-xs-8">
-						<input type="text" class="form-control text-left" ng-model="lastname"></input>  
-					</div>
-				</div>
-				
-				<div class="row section rowpad">
-					<div class="col-xs-4">Email*:</div>
-					<div class="col-xs-8">
-						<input type="text" class="form-control text-left" ng-model="email"></input> 
-					</div>
-				</div>
-				
-				<div class="row section rowpad">
-					<div class="col-xs-4">Phone:</div>
-					<div class="col-xs-8">
-						<input type="text" class="form-control text-left" ng-model="phone"></input>  
-					</div>
-				</div>
-
-				<div class="row section rowpad">
-					<div class="col-xs-12 text-center">
-						<button id="btn-start" type="button" class="btn btn-default" 
-						ng-click="register()">UPDATE</button>
-					</div>
-				</div>
-			</div>
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>Email</td>
+							<td>{{user.email}}</td>
+						</tr>
+						<tr>
+							 <td>Phone</td>
+							 <td>{{user.phone}}</td>
+						</tr>
+						<tr>
+							 <td>Profile</td>
+							 <td>{{user.profile}}</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 			</div>
 		</div>
-		<div class="col-sm-3"></div>
-		
+	
+		<div class="col-sm-6">		
+			<div class="panel panel-default">
+			<div class="panel-heading">Company details</div>
+			<div class="panel-body2">
+				<table class="table table-condensed">
+					<tbody>
+						<tr>
+							<td>Legal name</td> <td>{{company.identity.legalName}}</td>
+						</tr>
+						<tr>
+							<td>Form</td> <td>{{company.identity.legalForm}}</td>
+						</tr>
+						<tr>
+							<td>Registration Nb.</td> <td>{{company.identity.registrationNb}}</td>
+						</tr>
+						<tr>
+							<td>Date of creation</td> <td>{{company.identity.dateOfCreation}}</td>
+						</tr>
+						<tr>
+							<td>Domiciliation</td>
+							<td>
+								<table class="addressTable">
+								<tbody>
+									<tr><td> {{company.identity.domiciliation.street}} </td></tr>
+									<tr><td> {{company.identity.domiciliation.zipcode}}, {{company.identity.domiciliation.city}} </td></tr>
+									<tr><td> {{company.identity.domiciliation.province}}, {{company.identity.domiciliation.country}} </td></tr>
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</div>
+		</div>
 	</div>	
 
 </div>

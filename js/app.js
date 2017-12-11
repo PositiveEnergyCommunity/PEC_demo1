@@ -8,6 +8,11 @@ app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpPro
       templateUrl: 'partials/profile.html',
       controller: 'profileCtrl'
    }).
+	
+	when('/editprofile', {
+      templateUrl: 'partials/profile_new.html',
+      controller: 'profileCtrl'
+   }).
             
    when('/asset', {
       templateUrl: 'partials/asset.html',
