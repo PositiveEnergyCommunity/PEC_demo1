@@ -9,6 +9,11 @@ app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpPro
       controller: 'profileCtrl'
    }).
 	
+	when('/profilestart', {
+      templateUrl: 'partials/profile.html',
+      controller: 'profileCtrl'
+   }).
+	
 	when('/editprofile', {
       templateUrl: 'partials/profile_new.html',
       controller: 'profileCtrl'
@@ -42,6 +47,11 @@ app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpPro
 	when('/editpool', {
       templateUrl: 'partials/pool_new.html',
       controller: 'poolCtrl'
+   }).
+	
+	when('/portfolio', {
+      templateUrl: 'partials/portfolio.html',
+      controller: 'portfolioCtrl'
    }).
 	
 	when('/logout', {

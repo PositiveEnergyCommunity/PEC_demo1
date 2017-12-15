@@ -1,42 +1,43 @@
-<!DOCTYPE html>
 <html>
+   
 <head>
-	<title>Positive Energy Community demonstrator</title>
+   <title>Positive Energy Community demonstrator</title>
 	<meta charset="utf-8">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-cookies.js"></script>
 	<script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
-	
-	<link rel="stylesheet" href="css/style.css">
 
+	<link rel="stylesheet" href="css/style.css">
+	  
+	<script src="js/applogin.js"></script>
 	<script src="controllers/loginCtrl.js"></script>
 	<script src="services/loginService.js"></script>	
 </head>
-
+   
 <body>
-
+	
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-		<a class="navbar-brand" href="#">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
 			<img src="./pictures/spread.png" width="96" height="58" alt="">
-		</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="./index.html#services">PARTNERS</a></li>
-        <li><a href="./index.html#startups">NEWS</a></li>
-        <li><a href="./freelance-consultant.html">BLOC</a></li>
-        <li><a href="./index.html#contact">CONTACT</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
-      </ul>
-    </div>
-  </div>
+			</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="./index.html#services">PARTNERS</a></li>
+				<li><a href="./index.html#startups">NEWS</a></li>
+				<li><a href="./freelance-consultant.html">CONTACT</a></li>
+				<li><a href="#register"><span class="glyphicon glyphicon-user"></span> REGISTER</a></li>
+				<li><a href="#login"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+			</ul>
+		</div>
+	</div>
 </nav>
 
 <!-- Container Presentation Slider -->
@@ -112,130 +113,10 @@
       <span class="sr-only">Next</span>
     </a>
 </div>
-</div>
-
-<div class="container-fluid" ng-app = "pecDemo" ng-controller="loginCtrl">
-
-	{{errormessage}}
+</div> 
 	
-	<div class="row section">
-		
-		<div class="col-sm-2"></div>
-		<div class="col-sm-4">
-			<div class="panel panel-default">
-			<div class="panel-body">
-			<div class="form-group">
-				<div class="row section rowpad">
-					
-					<div class="col-xs-3">Email:</div>
-					<div class="col-xs-9">
-						<input type="text" class="form-control text-left" ng-model="logEmail" 
-							   focus-on="focusMe" ng-keyup="uniKeyCode($event)"></input>  
-					</div>
-					
-				</div>
-				<div class="row section rowpad">
-					
-					<div class="col-xs-3">Password:</div>
-					<div class="col-xs-9">
-						<input type="text" class="form-control text-left"  ng-model="logPassword" 
-							   focus-on="focusMe" ng-keyup="uniKeyCode($event)"></input>  
-					</div>
-					
-				</div>
-				
-				<div class="row section rowpad">
-					
-					<div class="col-xs-12 text-center">
-						<button id="btn-start" type="button" class="btn btn-default testQuestion" 
-						ng-click="login()">LOGIN</button>
-					</div>
-					
-				</div>
-			</div>
-			</div>
-			</div>
-		</div>
-		
-
-		<div class="col-sm-4">
-			<div class="panel panel-default">
-			<div class="panel-body">
-			<div class="form-group">
-			
-				<div class="row section rowpad">
-					<div class="col-xs-4">Email*:</div>
-					<div class="col-xs-8">
-						<input type="text" class="form-control text-left" ng-model="email" 
-							   focus-on="focusMe" ng-keyup="uniKeyCode($event)"></input>  
-					</div>
-				</div>
-
-				<div class="row section rowpad">
-					<div class="col-xs-4">Password*:</div>
-					<div class="col-xs-8">
-						<input type="text" class="form-control text-left"  ng-model="password" 
-							   focus-on="focusMe" ng-keyup="uniKeyCode($event)"></input>  
-					</div>
-				</div>
-				
-				<div class="row section rowpad">
-					<div class="col-xs-4">Confirm Pwd*:</div>
-					<div class="col-xs-8">
-						<input type="text" class="form-control text-left"  ng-model="passwordConf" 
-							   focus-on="focusMe" ng-keyup="uniKeyCode($event)"></input>  
-					</div>
-				</div>
-				
-				<div class="row section rowpad">
-					<div class="col-xs-4">Title:</div>
-					<div class="col-xs-8">
-						<input type="text" class="form-control text-left" ng-model="title" 
-							   focus-on="focusMe" ng-keyup="uniKeyCode($event)"></input>  
-					</div>
-				</div>
-				
-				<div class="row section rowpad">
-					<div class="col-xs-4">Firstname*:</div>
-					<div class="col-xs-8">
-						<input type="text" class="form-control text-left" ng-model="firstname" 
-							   focus-on="focusMe" ng-keyup="uniKeyCode($event)"></input>  
-					</div>
-				</div>
-				
-				<div class="row section rowpad">
-					<div class="col-xs-4">Lastname*:</div>
-					<div class="col-xs-8">
-						<input type="text" class="form-control text-left" ng-model="lastname" 
-							   focus-on="focusMe" ng-keyup="uniKeyCode($event)"></input>  
-					</div>
-				</div>
-				
-				<div class="row section rowpad">
-					<div class="col-xs-4">Phone:</div>
-					<div class="col-xs-8">
-						<input type="text" class="form-control text-left" ng-model="phone" 
-							   focus-on="focusMe" ng-keyup="uniKeyCode($event)"></input>  
-					</div>
-				</div>
-
-				<div class="row section rowpad">
-					<div class="col-xs-12 text-center">
-						<button id="btn-start" type="button" class="btn btn-default" 
-						ng-click="register()">REGISTER</button>
-					</div>
-				</div>
-			</div>
-			</div>
-			</div>
-		</div>
-		<div class="col-sm-2"></div>
-		
-	</div>	
-		
-
-	{{userData}}
-
+<div class="container bg-1" ng-app = "pecDemo">
+	<div ng-view></div>
 </div>
 
 </body>

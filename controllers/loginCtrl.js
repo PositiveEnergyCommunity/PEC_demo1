@@ -4,16 +4,45 @@
 //
 //-----------------------------------------------------------------------------
 
-angular.module('pecDemo', ['ngStorage'])
+angular.module("pecDemo")
 
-.controller('loginCtrl', function($scope, $http, $window, loginService ) {
-	$scope.email = 'john@email.com';
-	$scope.password = 'qwerty';
+.controller("loginCtrl", function($scope, $http, $window, loginService ) {
+	
+	$scope.pagename = 'Register New User';
+	$scope.button = 'REGISTER';
+		
+	$scope.user = {
+		email: 'john@email.com',
+		firstname: 'John',
+		lastname: 'Doe',
+		title: 'Mr.',
+		phone: '8888 8888',
+		password: 'qwerty',
+		profile: 'Investor',
+		userStatus: 'active',
+	}
+	
 	$scope.passwordConf = 'qwerty';
-	$scope.firstname = 'John';
-	$scope.lastname = 'Steed';
-	$scope.title = 'Sir';
-	$scope.phone = '12345678';
+
+	$scope.company = {
+		identity: {
+			legalName: 'MyCompany Ltd',
+			legalForm: 'Ltd.',
+			registrationNb: '1234567890',
+			dateOfCreation: '01/01/2000',
+			domiciliation: {
+				street: '8 Marina View #20-01 Asia Square Tower 1',
+				zipcode: '018960',
+				city: 'Singapore',
+				province: '',
+				country: 'Singapore'
+			}
+		},
+		name: 'MyCompany',
+		description: 'Solar Development',
+		representative: 'Tom Hanks',
+		currency: 'USD'
+	};
 	
 	$scope.logEmail = 'Enter your email address'
 	$scope.logPassword = 'Enter your password'
@@ -49,7 +78,7 @@ angular.module('pecDemo', ['ngStorage'])
 			console.log("[login]- success response = " + response);
 			console.log("[login]- success type = " + response.type);
 					
-			var url =  './home.html#/profile?data='+response.data.token;
+			var url =  './home.html#/profilestart?data='+response.data.token;
 			$window.location.href = url;
 			
 			}, 
@@ -69,19 +98,23 @@ angular.module('pecDemo', ['ngStorage'])
 	//-----------------------------------------------------------------------------
 	$scope.register = function() {
 		console.log("[register]- begin");
-		console.log("[register]- email = " + $scope.email);
-		console.log("[register]- password = " + $scope.password);
+		console.log("[register]- email = " + $scope.user.email);
+		console.log("[register]- password = " + $scope.user.password);
+		
+		$scope.company.name = $scope.company.identity.legalName;
 		
 		var inData = {
 			'id': null,
-			'title': $scope.title,
-			'firstname': $scope.firstname,
-			'lastname': $scope.lastname,
-			'email': $scope.email, 
-			'password': $scope.password,
+			'title': $scope.user.title,
+			'firstname': $scope.user.firstname,
+			'lastname': $scope.user.lastname,
+			'email': $scope.user.email, 
+			'password': $scope.user.password,
 			'passwordConf': $scope.passwordConf,
-			'phone': $scope.phone,
-			'userStatus': $scope.userStatus};
+			'phone': $scope.user.phone,
+			'profile': $scope.user.profile,
+			'userStatus': $scope.user.userStatus,
+			'company': $scope.company};
 		
 		$http.post("http://localhost:3000/user/", inData).
 		then(function success(response) { 
@@ -89,7 +122,7 @@ angular.module('pecDemo', ['ngStorage'])
 			//console.log("[register]- success data = " + response.data.user.firstname);
 			//console.log("[register]- success token = " + response.data.token);
 			
-			var url =  './home.html#/profile?data='+response.data.token;
+			var url =  './home.html#/profilestart?data='+response.data.token;
 			$window.location.href = url;
 		},
 		function error(err) {

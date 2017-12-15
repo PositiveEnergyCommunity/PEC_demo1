@@ -3,10 +3,10 @@
 //  Dan DUONG - 01/12/2017
 //
 //-----------------------------------------------------------------------------
-angular.module('pecDemo')
-	.service('loginService', function($http, $localStorage) {
+angular.module("pecDemo")
+	.service('loginService', function($http) {
 		var baseUrl = "http://localhost:3000";
-      
+/*
 		function changeUser(user) {
          console.log("[loginService- changeUser]- begin");
 			angular.extend(currentUser, user);
@@ -42,7 +42,7 @@ angular.module('pecDemo')
       }
 
       var currentUser = getUserFromToken();
-
+*/
       return {
          save: function(data, success, error) {
 				console.log("[loginService- save]- begin");
@@ -58,9 +58,9 @@ angular.module('pecDemo')
             $http.get(baseUrl + '/me').success(success).error(error)
          },
          logout: function(success) {
-            changeUser({});
-            delete $localStorage.token;
-            success();
+           // changeUser({});
+           // delete $localStorage.token;
+           // success();
          }
       };
    });

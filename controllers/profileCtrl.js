@@ -1,7 +1,14 @@
+//-----------------------------------------------------------------------------
+//	 PEC DEMO - login Controller
+//  Dan DUONG - 24/11/2017
+//
+//-----------------------------------------------------------------------------
+
 angular.module("pecDemo")
 
-.controller('profileCtrl', function($scope, $http, $routeParams, $localStorage, $interval) {
-   $scope.message = "This page will be used to display login or register form";
+.controller('profileCtrl', function($scope, $location, $http, $routeParams, $localStorage, $interval) {
+	$scope.pagename = 'Profile Update';
+	$scope.button = 'UPDATE';
 	
 	$scope.user = {
 		email: 'warren@gold.com',
@@ -11,6 +18,7 @@ angular.module("pecDemo")
 		phone: '8888 8888',
 		password: 'warren',
 		profile: 'Investor',
+		userStatus: 'active'
 	}
 	
 	$scope.passwordConf = 'warren';
@@ -31,7 +39,7 @@ angular.module("pecDemo")
 		},
 		name: 'J Safra Sarasin',
 		description: 'Private Banking',
-		poolManager: 'Jack Daniels',
+		representative: 'Jack Daniels',
 		currency: 'USD'
 	};
 	
@@ -49,20 +57,24 @@ angular.module("pecDemo")
 	init = function () {
 
 		console.log("[profileCtrl init]- begin");
-		
-		$localStorage.token = $routeParams.data;;
+		if ($location.path() === "/profilestart") {
+			console.log("[profileCtrl init]- profilestart");
+			$localStorage.token = $routeParams.data;
+		};
+			
 		console.log("[profileCtrl init]- token = " +$localStorage.token);
-		
 		
 		$http.get("http://localhost:3000/user").
 		then(function success(response){
 			console.log("[init]- status = " + response.status);
 			console.log("[init]- email = " + response.data.user.email);
-			$scope.email = response.data.user.email;
-			$scope.firstname = response.data.user.firstname;
-			$scope.lastname = response.data.user.lastname;
-			$scope.title = response.data.user.title;
-			$scope.phone = response.data.user.phone;
+			$scope.user.email = response.data.user.email;
+			$scope.user.firstname = response.data.user.firstname;
+			$scope.user.lastname = response.data.user.lastname;
+			$scope.user.title = response.data.user.title;
+			$scope.user.phone = response.data.user.phone;
+			$scope.company = response.data.company;
+			console.log("[profileCtrl init]- token = " +$localStorage.token);
 			},
 			function error(err) {
 			console.log("[init]- err = " + err);
@@ -75,7 +87,7 @@ angular.module("pecDemo")
 	
 	//-----------------------------------------------------------------------------
 	// Function update()
-	// Role : Create a new user
+	// Role : Update user's information
 	//-----------------------------------------------------------------------------
 	$scope.update = function() {
 		console.log("[register]- begin");
@@ -91,7 +103,9 @@ angular.module("pecDemo")
 			'password': $scope.user.password,
 			'passwordConf': $scope.passwordConf,
 			'phone': $scope.user.phone,
-			'userStatus': $scope.user.profile};
+			'profile': $scope.user.profile,
+			'userStatus': $scope.user.userStatus,
+			'company': $scope.company};
 		
 		$http.put("http://localhost:3000/user/", inData).then(function (data, status, headers, config) { 
 			console.log("[register]- data = " + data);
@@ -108,6 +122,18 @@ angular.module("pecDemo")
 		});
 	}
 	
+	//-----------------------------------------------------------------------------
+	// Function selectTimer
+	// Role : Set the selected fixed digit of the operation.
+	//-----------------------------------------------------------------------------	
+	$scope.selectTimer = function(duration, text) {
+			
+		console.log("[selectDuration]- duration = " + duration);
+		$scope.testDuration = duration;
+		
+		console.log("[selectDuration]- text = " + text);
+		$("#btnTimerSelect").html(text + '&nbsp;<span class="caret"></span>');
+	}
 
 	
 });
