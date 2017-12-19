@@ -1,0 +1,194 @@
+<div class="container portfolio">
+	
+	<div class="row section h2title">
+		<div class="col-sm-3"></div>	
+		<div class="col-sm-6">
+			<h2> {{user.title}} {{user.firstname}} {{user.lastname}}'s Portfolio</h2>
+		</div>
+		<div class="col-sm-3 text-right">
+		
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+	
+	
+	<div class="row section">
+		<div class="col-lg-5 col-sm-5 portfolio">
+			<p>Date = {{ date | date:'EEEE, MMMM d, y - HH:mm:ss' }}</p>
+		</div>
+		
+		<div class="col-lg-2 col-sm-2 text-right">
+			<button id="btn-currency" type="button" class="btn btn-default btn-xs pull-right" 
+						ng-click="currency()">{{portfolio.currency}}</button>
+		</div>
+		<div class="col-lg-5 col-sm-5 text-right">
+			<p>Cash account = {{portfolio.cashAccount | number}}, 
+			Valuation = {{portfolio.investValuation | number }},
+			Margin = {{portfolio.margin | number }},</p>
+		</div>
+	</div>
+	
+	<div class="row section">
+		<div class="col-lg-6 col-sm-6 portfolio">
+			<div class="panel portfolio">
+			<div class="panel-body2 panelPortfolio">
+				
+				<div id="tabWatchlist">	
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a  href="" data-toggle="tab">Watchlist</a>
+						</li>
+						<li>
+							<a href="" data-toggle="tab">Alerts</a>
+						</li>
+						<button id="btn-edit" type="button" class="btn btn-primary btn-xs pull-right" 
+						ng-click="edit()">EDIT</button>
+					</ul>
+					<div class="tab-content ">
+						<table class="table table-condensed">
+						<thead>
+							<tr>
+							  <th class = "text-left"> Instrument</th>
+							  <th class = "text-center thPortfolio"> Bid</th>
+							  <th class = "text-center thPortfolio">Bid size</th>
+							  <th class = "text-center thPortfolio">Ask</th>
+							  <th class = "text-center thPortfolio">Ask size</th>
+							  <th class = "text-center thPortfolio">Delay</th>
+							  <th class = "text-center thPortfolio">%Change</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="active"> 
+								<td>Sgp Rooftop PV Senior Bond</td>
+								<td class = "text-center">885.00</td>
+								<td class = "text-center">200</td>
+								<td class = "text-center">886.50.00</td>
+								<td class = "text-center">300</td>
+								<td class = "text-center"> </td>
+								<td class = "text-center">+2.21%</td>
+							</tr>
+							<tr> 
+								<td>Sgp Rooftop PV Junior Bond</td>
+								<td class = "text-center">198.00</td>
+								<td class = "text-center">1000</td>
+								<td class = "text-center">201.00</td>
+								<td class = "text-center">500</td>
+								<td class = "text-center"> </td>
+								<td class = "text-center">+2.53%</td>
+							</tr>
+							<tr> 
+								<td>India Bihar Solar 12%-Bond</td>
+								<td class = "text-center">258.00</td>
+								<td class = "text-center">2000</td>
+								<td class = "text-center">260.00</td>
+								<td class = "text-center">1200</td>
+								<td class = "text-center"> </td>
+								<td class = "text-center">+3.45%</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+				
+			</div>
+			</div>
+		</div>
+	
+		<div class="col-lg-6 col-sm-6 portfolio">		
+			<div class="panel portfolio">
+			<div class="panel-body2 panelPortfolio">
+
+				<div id="tabOverview">	
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a  href="" data-toggle="tab">Overview</a>
+						</li>
+						<li>
+							<a href="" data-toggle="tab">Charts</a>
+						</li>
+						<button id="btn-trade" type="button" class="btn btn-primary btn-xs pull-right" 
+						ng-click="trade()">TRADE</button>
+					</ul>
+					
+					<div class="tab-content ">
+						<table class="table">
+						<thead>
+							<tr>
+							  <th class = "text-left thPortfolio"> Last traded</th>
+							  <th class = "text-center thPortfolio">Net change</th>
+							  <th class = "text-center thPortfolio">%Change</th>
+							  <th class = "text-center thPortfolio">Low</th>
+							  <th class = "text-center thPortfolio">High</th>
+							  <th class = "text-center thPortfolio">Volume</th>
+							  <th class = "text-center thPortfolio">Last update</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr> 
+								<td class = "text-left"	>15/12/17-12:07</td>
+								<td class = "text-center">2.44</td>
+								<td class = "text-center">2.34%</td>
+								<td class = "text-center">99.50</td>
+								<td class = "text-center">102.25</td>
+								<td class = "text-center">2000</td>
+								<td class = "text-center">15/12/17-12:15</td>
+							</tr>
+						</tbody>
+						</table>
+						<div class=" active" id="1">
+							<img src={{image1.src}} class="img-rounded" alt={{image1.alt}} style="width:100%">
+						</div>
+					</div>
+				</div>			
+				
+			</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row section">
+		<div class="col-lg-12 col-sm-12 portfolio">
+			<div class="panel portfolio">
+			<div class="panel-body2 panelPortfolio">
+				
+				<div id="tabPosition">	
+					<ul class="nav nav-tabs">
+						<li>
+							<a  href="" data-toggle="tab">Positions</a>
+						</li>
+						<li class="active">
+							<a href="" data-toggle="tab">Orders</a>
+						</li>
+					</ul>
+					<div class="tab-content ">
+						<table class="table">
+						<thead>
+							<tr>
+							  <th class = "text-left"> Instrument</th>
+							  <th class = "text-center thPortfolio">Type</th>
+							  <th class = "text-center thPortfolio">Buy/Sell</th>
+							  <th class = "text-center thPortfolio">Amount</th>
+							  <th class = "text-center thPortfolio">Price</th>
+							  <th class = "text-center thPortfolio">Current</th>
+							  <th class = "text-center thPortfolio">Stop</th>
+							  <th class = "text-center thPortfolio">Limit</th>
+							  <th class = "text-center thPortfolio">Duration</th>
+							  <th class = "text-center thPortfolio">Created</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat = "y in pool.tokens"> 
+								<td>{{y.name}}</td>
+								<td>{{y.supply}}</td>
+								<td class = "text-right">{{y.value}} {{pool.currency}}</td>
+								<td class = "text-right">{{y.supply*y.value | number:2}} {{pool.currency}}</td></tr> 
+						</tbody>
+						</table>
+					</div>
+				</div>
+				
+			</div>
+			</div>
+		</div>	
+	</div>
+</div>

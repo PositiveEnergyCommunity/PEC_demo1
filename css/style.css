@@ -45,7 +45,12 @@ h2 {
 .navbar-nav  li a:hover {
 	color: #1abc9c !important;
 }
-
+.nav-tabs > li > a
+{
+    /* adjust padding for height*/
+	 padding-top: 3px; 
+    padding-bottom: 2px;
+}
 .slide {
 	interval : 8000;
 }
@@ -109,15 +114,29 @@ h2 {
 	padding: 15px;
 }
 .panel-body2 {
-	border: 2px solid #999; 
+	border: 1px solid #CCC; 
 	background: #fff; 
 	padding: 15px;
+	min-height: 300px;
 }
 .rowpad {
 	padding: 5px
 }
 .row {
 	margin-top: 10px
+}
+.portfolio {
+	padding: 0px;
+	margin:0px;
+}
+.panelPortfolio {
+	padding: 2px;
+	padding-top: 5px;
+	margin-top: 0px;
+	margin-left: 5px;
+}
+.thPortfolio {
+	font-weight: normal;
 }
 .bg-1 {
     background: #fff;
