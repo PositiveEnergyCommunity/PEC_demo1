@@ -6,7 +6,7 @@
 
 angular.module("pecDemo")
 
-.controller('portfolioCtrl', function($scope, $location, $http, $routeParams, $localStorage, $interval) {
+.controller('portfolioCtrl', function($scope, $location, $http, $window, $routeParams, $localStorage, $interval) {
 	$scope.pagename = 'Profile Update';
 	$scope.button = 'UPDATE';
 	
@@ -140,6 +140,19 @@ angular.module("pecDemo")
 			alert("error"); 
 		});
 	}
+	
+	
+	//-----------------------------------------------------------------------------
+	// Function goToAsset()
+	// Role : goToAsset View page
+	//-----------------------------------------------------------------------------
+	$scope.goToAsset = function() {
+		console.log("[goToAsset]- begin");
+		var url =  './home.html#/asset';
+			$window.location.href = url;
+	}
+
+	
 	
 	//-----------------------------------------------------------------------------
 	// Function selectTimer
