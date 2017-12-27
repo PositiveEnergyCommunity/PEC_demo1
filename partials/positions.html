@@ -1,0 +1,41 @@
+<div class="panel portfolio">
+			<div class="panel-body2 panelPortfolio">
+				
+				<div id="tabPosition">	
+					<ul class="nav nav-tabs">
+						<li>
+							<a  href="" data-toggle="tab">Positions</a>
+						</li>
+						<li class="active">
+							<a href="" data-toggle="tab">Orders</a>
+						</li>
+					</ul>
+					<div class="tab-content ">
+						<table class="table">
+						<thead>
+							<tr>
+							  <th class = "text-left thPortfolio"> Instrument</th>
+							  <th class = "text-center thPortfolio">Type</th>
+							  <th class = "text-center thPortfolio">Buy/Sell</th>
+							  <th class = "text-center thPortfolio">Amount</th>
+							  <th class = "text-center thPortfolio">Price</th>
+							  <th class = "text-center thPortfolio">Current</th>
+							  <th class = "text-center thPortfolio">Stop</th>
+							  <th class = "text-center thPortfolio">Limit</th>
+							  <th class = "text-center thPortfolio">Duration</th>
+							  <th class = "text-center thPortfolio">Created</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat = "y in pool.tokens"> 
+								<td>{{y.name}}</td>
+								<td>{{y.supply}}</td>
+								<td class = "text-right">{{y.value}} {{pool.currency}}</td>
+								<td class = "text-right">{{y.supply*y.value | number:2}} {{pool.currency}}</td></tr> 
+						</tbody>
+						</table>
+					</div>
+				</div>
+				
+			</div>
+			</div>
