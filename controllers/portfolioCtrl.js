@@ -6,7 +6,7 @@
 
 angular.module("pecDemo")
 
-.controller('portfolioCtrl', function($scope, $location, $http, $window, $routeParams, $localStorage, $interval) {
+.controller('portfolioCtrl', function($scope, $location, $http, $routeParams, $localStorage, $interval) {
 	$scope.pagename = 'Profile Update';
 	$scope.button = 'UPDATE';
 	
@@ -68,6 +68,8 @@ angular.module("pecDemo")
 			src:'pictures/pool graph1.png',
 			alt:'chart'
 	};
+	
+	$scope.selectedOverviewView =2;
 	
 	//-----------------------------------------------------------------------------
 	// Function init()
@@ -143,13 +145,27 @@ angular.module("pecDemo")
 	
 	
 	//-----------------------------------------------------------------------------
-	// Function goToAsset()
+	// Function assetOverview()
 	// Role : goToAsset View page
 	//-----------------------------------------------------------------------------
-	$scope.goToAsset = function() {
-		console.log("[goToAsset]- begin");
-		var url =  './home.html#/asset';
-			$window.location.href = url;
+	$scope.setOverview = function(view) {
+		console.log("[assetOverview]- begin");
+		console.log("[assetOverview]- selectedOverviewView before= " + $scope.selectedOverviewView);
+		$scope.selectedOverviewView = view;
+		console.log("[assetOverview]- selectedOverviewView after= " + $scope.selectedOverviewView);
+	}
+	
+	$scope.testOverview = function(view) {
+		console.log("[testOverview]- begin");
+		//console.log("[testOverview]- selectedOverviewView = " + $scope.selectedOverviewView);
+		if ($scope.selectedOverviewView === view) {
+			//console.log("[testOverview]- true");
+			return true;
+		}	
+		else {
+			//console.log("[testOverview]- false");
+			return false;
+		}
 	}
 
 	

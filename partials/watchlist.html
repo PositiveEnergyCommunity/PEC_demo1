@@ -12,204 +12,8 @@
                   <li ng-class="{active: selectedWatchlistTab == 3}">
                      <a data-target="#" ng-click="selectedWatchlistTab = 3;">Browse</a>
                   </li>
-						<button type="button" class="btn btn-primary btn-xs pull-right" 
-								  data-toggle="modal" data-target="#myModal">EDIT</button>
-				
-						<!-- Modal -->
-						<div class="modal fade" id="myModal" role="dialog" ng-init="selectedModal = 1;">
-							<div class="modal-dialog">
-							 
-								<!-- Modal content-->
-								<div class="modal-content" ng-show="selectedModal == 1">
-									<div class="modal-header">
-										<button type="button" class = "close" data-dismiss="modal">&times;</button>
-										<h4 class="modal-title">Pools and Intruments List</h4>
-									</div>
-									<div class="modal-body">
-										
-										<table class="table table-condensed">
-											<thead>
-												<tr>
-												  <th class = "text-left thPortfolio"> Lists</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr><td>
-													<a data-target="#"  ng-click="selectedModal = 2;">Malaysia Solar Bonds Pool</a>
-												</td></tr>
-												
-												<tr><td>
-													<a data-target="#"  ng-click="selectedModal = 3;">Solar Assets Instruments</a>
-												</td></tr>
-												
-												<tr><td>
-													<a data-target="#"  ng-click="selectedModal = 4;">Wind Assets Instruments</a>
-												</td></tr>
-
-												<tr><td>
-													<a data-target="#"  ng-click="selectedModal = 5;">Other Assets Instruments</a>
-												</td></tr>
-												
-												<tr><td>
-													<a data-target="#"  ng-click="selectedModal = 6;">Stocks by Region</a>
-												</td></tr>
-												
-												<tr><td>
-													<a data-target="#"  ng-click="selectedModal = 7;">Bonds Developed Markets</a>
-												</td></tr>
-												
-												<tr><td>
-													<a data-target="#"  ng-click="selectedModal = 8;">Bonds Emerging Markets</a>
-												</td></tr>
-												
-										
-											</tbody>
-										</table>
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									</div>
-								</div>	
-								
-								
-								<div class="modal-content" ng-show="selectedModal == 2">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
-										<h4 class="modal-title">Pools and Intruments List</h4>
-									</div>
-									
-									<div class="modal-body">
-										<table class="table table-condensed">
-											<thead>
-												<tr>
-												  <th class = "text-left thPortfolio"> Instrument</th>
-												  <th class = "text-center thPortfolio">Last Traded</th>
-												  <th class = "text-center thPortfolio">Bid</th>
-												  <th class = "text-center thPortfolio">Ask</th>
-												  <th class = "text-center thPortfolio">%Change</th>
-												  <th class = "text-center thPortfolio">Net Change</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr> 
-													<td>Energy PPA Bond Token</td>
-													<td class = "text-center">39.00</td>
-													<td class = "text-center">39.00</td>
-													<td class = "text-center">39.05</td>
-													<td class = "text-center">0.00%</td>
-													<td class = "text-center">0.00</td>
-												</tr>
-												<tr> 
-													<td>Energy PPA Equity Token</td>
-													<td class = "text-center">96.60</td>
-													<td class = "text-center">96.40</td>
-													<td class = "text-center">96.45</td>
-													<td class = "text-center">0.10%</td>
-													<td class = "text-center">0.10</td>
-												</tr>
-												<tr> 
-													<td>Energy PPA Purchase Token</td>
-													<td class = "text-center">66.65</td>
-													<td class = "text-center">66.45</td>
-													<td class = "text-center">66.60</td>
-													<td class = "text-center">0.54%</td>
-													<td class = "text-center">0.35</td>
-												</tr>
-												
-												<tr> 
-													<td>Green Energy Certificate Equity Token</td>
-													<td class = "text-center">7.23</td>
-													<td class = "text-center">7.23</td>
-													<td class = "text-center">7.24</td>
-													<td class = "text-center">-3.21%</td>
-													<td class = "text-center">-0.24</td>
-												</tr>
-												
-												<tr> 
-													<td>Green Energy Certificates</td>
-													<td class = "text-center">7.23</td>
-													<td class = "text-center">7.23</td>
-													<td class = "text-center">7.24</td>
-													<td class = "text-center">-3.21%</td>
-													<td class = "text-center">-0.24</td>
-												</tr>
-												
-											</tbody>
-										</table>
-									</div>
-									
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal" ng-click= "goToAsset()">Details</button>
-										<button type="button" class="btn btn-default" data-target="#"  ng-click="selectedModal = 1;">Add</button>
-										<button type="button" class="btn btn-default" data-target="#"  ng-click="selectedModal = 1;">Back</button>
-									</div>
-								</div>
-								
-								<div class="modal-content" ng-show="selectedModal == 3">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
-										<h4 class="modal-title">Pools and Intruments List</h4>
-									</div>
-									
-									<div class="modal-body">
-										<table class="table table-condensed">
-											<thead>
-												<tr>
-												  <th class = "text-left thPortfolio"> Instrument</th>
-												  <th class = "text-center thPortfolio">Last Traded</th>
-												  <th class = "text-center thPortfolio">Bid</th>
-												  <th class = "text-center thPortfolio">Ask</th>
-												  <th class = "text-center thPortfolio">%Change</th>
-												  <th class = "text-center thPortfolio">Net Change</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr> 
-													<td>BOC Hong Kong (holdings) Ltd</td>
-													<td class = "text-center">39.00</td>
-													<td class = "text-center">39.00</td>
-													<td class = "text-center">39.05</td>
-													<td class = "text-center">0.00%</td>
-													<td class = "text-center">0.00</td>
-												</tr>
-												<tr> 
-													<td>CK Hutchinson Holding Ltd</td>
-													<td class = "text-center">96.60</td>
-													<td class = "text-center">96.40</td>
-													<td class = "text-center">96.45</td>
-													<td class = "text-center">0.10%</td>
-													<td class = "text-center">0.10</td>
-												</tr>
-												<tr> 
-													<td>Power Asset Holding Ltd</td>
-													<td class = "text-center">66.65</td>
-													<td class = "text-center">66.45</td>
-													<td class = "text-center">66.60</td>
-													<td class = "text-center">0.54%</td>
-													<td class = "text-center">0.35</td>
-												</tr>
-												
-												<tr> 
-													<td>Keppel Corp.Ltd</td>
-													<td class = "text-center">7.23</td>
-													<td class = "text-center">7.23</td>
-													<td class = "text-center">7.24</td>
-													<td class = "text-center">-3.21%</td>
-													<td class = "text-center">-0.24</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-									
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal" ng-click= "goToAsset()">Details</button>
-										<button type="button" class="btn btn-default" data-target="#"  ng-click="selectedModal = 1;">Add</button>
-										<button type="button" class="btn btn-default" data-target="#"  ng-click="selectedModal = 1;">Back</button>
-									</div>
-								</div>
-								
-							</div>
-						</div>		<!-- End Modal definition -->
+						<button type="button" class="btn btn-primary btn-xs pull-right">EDIT</button>
+						
 					</ul>
 					
 					
@@ -306,7 +110,7 @@
 					
 					<div ng-show="selectedBrowseView == 2">
 						<div>
-							<table class="table table-condensed">
+							<table class="table table-condensed table-hover">
 								<thead>
 									<tr>
 									  <th class = "text-left thPortfolio"> Instrument</th>
@@ -318,13 +122,25 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr> 
+									<tr data-toggle="collapse" data-target="#myAsset" class="clickable"> 
 										<td>Energy PPA Bond Token</td>
 										<td class = "text-center">39.00</td>
 										<td class = "text-center">39.00</td>
 										<td class = "text-center">39.05</td>
 										<td class = "text-center">0.00%</td>
 										<td class = "text-center">0.00</td>
+									</tr>
+									<tr id="myAsset" class="collapse">
+										<td colspan="6">
+											<table class="table table-condensed noMargin table-hover borderless">
+												<tr class="clickable" ng-click="setOverview(2)"><td>
+													Block 311B Clementi Rooftop PV Asset
+												</td></tr>
+												<tr class="clickable"><td>
+													Block 71 One North Rooftop PV Asset
+												</td></tr>
+											</table>
+										</td>
 									</tr>
 									<tr> 
 										<td>Energy PPA Equity Token</td>
@@ -428,6 +244,7 @@
 							<button type="button" class="btn btn-default" data-target="#"  ng-click="selectedBrowseView = 1;">Add</button>
 							<button type="button" class="btn btn-default" data-target="#"  ng-click="selectedBrowseView = 1;">Back</button>
 						</div>
+					</div>
 					</div>
 					
 				</div>

@@ -1,0 +1,195 @@
+<p> Block 311B Clementi Rooftop PV Asset</p>
+<div class="tabbable tabs-below" ng-init="selectedAssetTab = 1;"  id="tabAsset">	
+	<ul class="nav nav-tabs">
+		<li ng-class="{active: selectedAssetTab == 1}">
+			<a  data-target="#"  ng-click="selectedAssetTab = 1;">Overview</a>
+		</li>
+		<li ng-class="{active: selectedAssetTab == 2}">
+			<a data-target="#" ng-click="selectedAssetTab = 2;">Energy</a>
+		</li>
+		<li ng-class="{active: selectedAssetTab == 3}">
+			<a data-target="#" ng-click="selectedAssetTab = 3;">Costs</a>
+		</li>
+		<li ng-class="{active: selectedAssetTab == 4}">
+			<a data-target="#" ng-click="selectedAssetTab = 4;">Financing</a>
+		</li>
+		<li ng-class="{active: selectedAssetTab == 5}">
+			<a data-target="#" ng-click="selectedAssetTab = 5;">Developer</a>
+		</li>
+		<li ng-class="{active: selectedAssetTab == 6}">
+			<a data-target="#" ng-click="selectedAssetTab = 6;">Dataroom</a>
+		</li>
+	</ul>
+	
+	<div class="tab_content" ng-show="selectedAssetTab == 1">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+		  
+		   <!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src="pictures/Block311_1.png" class="img-thumbnail" alt="Trivelis"
+						  style="width:50%">
+				</div>
+
+				<div class="item">
+					<img src="pictures/Block311_2.png" class="img-thumbnail" alt="Trivelis"
+						  style="width:50%">					
+				</div>
+
+				<div class="item">
+					<img src="pictures/Block311_3.png" class="img-thumbnail" alt="Trivelis"
+						  style="width:50%">					
+				</div>
+		   </div>
+		   
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="" data-target="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="" data-target="#myCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+		
+		<table class="table table-condensed">
+			<tbody>
+				<tr>
+					<td>Developer</td>
+					<td>{{developer}}</td>
+				</tr>
+				<tr>
+					<td>Location</td>
+					<td>
+						<table class="addressTable">
+						<tbody>
+							<tr><td> {{address.street}} </td></tr>
+							<tr><td> {{address.zipcode}}, {{address.city}} </td></tr>
+							<tr><td> {{address.province}}, {{address.country}} </td></tr>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					 <td>Start date</td>
+					 <td>{{dateOfCreation}}</td>
+				</tr>
+				<tr>
+					 <td>Commission date</td>
+					 <td>{{dateOfCommission}}</td>
+				</tr>
+			</tbody>
+		</table>
+					
+	</div>
+	
+	<div class="tab_content" ng-show="selectedAssetTab == 2">
+		<table class="table table-condensed">
+			<tbody>
+				<tr>
+					<td>Type</td>
+					<td>{{energyType}}</td>
+				</tr>
+				<tr>
+					<td>Installed Capacity</td>
+					<td>{{installedCapacity | number}} kWp </td>
+				</tr>
+				<tr>
+					<td>Life Duration</td>
+					<td>{{lifeDuration}} years</td>
+				</tr>
+				<tr>
+					<td>Specific Yield</td>
+					<td>{{specificYield | number}} kWh/kWp/year</td>
+				</tr>
+				<tr>
+					<td>Degression</td>
+					<td>{{degression}}%</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="tab_content" ng-show="selectedAssetTab == 3">
+		<table class="table table-condensed">
+			<tbody>
+				<tr>
+					<td>Project costs</td>
+					<td align="right">{{projectCosts.investmentCost | number}} {{currency}}</td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td>Setup costs</td>
+					<td align="right">{{projectCosts.setupCost | number}} {{currency}}</td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td>Consulting costs</td>
+					<td align="right">{{projectCosts.consultingCost | number}} {{currency}}</td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td>Total</td>
+					<td align="right">{{totalCosts | number}} {{currency}}</td>
+					<td> </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="tab_content" ng-show="selectedAssetTab == 4">
+		<table class="table table-condensed">
+			<tbody>
+				<tr>
+					<td>Equity</td>
+					<td align="right">{{projectFinancing.equity}}%</td>
+					<td align="right">{{financing.equityAmount | number}} {{currency}}</td>
+					<td> </td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td>Senior Loan</td>
+					<td align="right">{{projectFinancing.seniorLoan}}%</td>
+					<td align="right">{{seniorLoan.amount | number}} {{currency}}</td>
+					<td>{{seniorLoan.duration | number}} months</td>
+					<td>{{seniorLoan.interestRate}}%</td>
+				</tr>
+				<tr>
+					<td>Junior Loan </td>
+					<td align="right">{{projectFinancing.juniorLoan}}%</td>
+					<td align="right">{{juniorLoan.amount | number}} {{currency}}</td>
+					<td>{{juniorLoan.duration | number}} months</td>
+					<td>{{juniorLoan.interestRate}}%</td>
+				</tr>
+				<tr>
+					<td>Total</td>
+					<td align="right">{{financing.totalPerCent}}%</td>
+					<td align="right">{{financing.total | number}} {{currency}}</td>
+					<td> </td>
+					<td> </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="tab_content" ng-show="selectedAssetTab == 5">
+		<p>Here the Asset Developer will be presented : Id, Track record, etc</p>
+	</div>
+	
+	<div class="tab_content" ng-show="selectedAssetTab == 6">
+		<img src="pictures/data_room.png" alt="dataroom"
+						  style="width:70%">
+	</div>
+	
+	
+	
+	
+	
+</div>

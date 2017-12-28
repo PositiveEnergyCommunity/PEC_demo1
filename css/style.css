@@ -128,6 +128,13 @@ h2 {
 .row {
 	margin-top: 10px
 }
+.noMargin {
+	margin: 0px;
+	padding:0px;
+}
+.borderless td, .borderless th {
+	 border-top: none !important; 
+}
 .portfolio {
 	padding: 0px;
 	margin:0px;

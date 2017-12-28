@@ -12,12 +12,19 @@
                   <li ng-class="{active: selectedTab == 3}">
                      <a data-target="#" ng-click="selectedTab = 3;">Charts</a>
                   </li>
-						<button id="btn-trade" type="button" class="btn btn-primary btn-xs pull-right" 
-						ng-click="trade()">TRADE</button>
+						<button type="button" class="btn btn-primary btn-xs pull-right" 
+								  data-toggle="modal" data-target="#myModal">TRADE</button>
+						
+						<div class="col-lg-6 col-sm-6 portfolio">
+							<div ng-include="'partials/modal.html'"></div>
+						</div>
+
 					</ul>
 					
 					<div class="tab-content" ng-show="selectedTab == 1">
-						<div class="tab-pane active cont" id="overview">
+						<div id="overview">
+						
+						<div ng-show="testOverview(1);">
 							<table class="table">
 							<thead>
 								<tr>
@@ -43,9 +50,15 @@
 							</tbody>
 							</table>
 							<div class=" active" id="1">
-								<img src={{image1.src}} class="img-rounded" alt={{image1.alt}} style="width:100%">
+								<img src="{{image1.src}}" class="img-rounded" alt="{{image1.alt}}" style="width:100%"></img>
 							</div>
 						</div>
+						
+						<div class="tab-content marginTab" ng-show="testOverview(2)">
+							<div ng-include="'partials/portfolioAsset.html'"></div>
+						</div>
+						
+						</div>	<!-- end of div ng-init selectedBrowseView -->
 					</div>	
 					
 					<div class="tab-content marginTab" ng-show="selectedTab == 2">
@@ -65,7 +78,7 @@
 						
 						<tr>
 							<td class = "text-left"	>
-							<h4> <a href="https://slack-redir.net/link?url=https%3A%2F%2Fwww.smartcitiesdive.com%2Fnews%2Fcalifornia-regulators-approve-1b-solar-rebate-plan-for-low-income-resident%2F513543%2F&v=3">
+<h4> <a href="https://slack-redir.net/link?url=https%3A%2F%2Fwww.smartcitiesdive.com%2Fnews%2Fcalifornia-regulators-approve-1b-solar-rebate-plan-for-low-income-resident%2F513543%2F&v=3">
 							California regulators approve $1B solar rebate plan for low-income residents.</a></h4>
 							<h5>Smart Cities Dive - Dec. 21, 2017 </h5>
 							<p>Landlords will apply for the SOMAH incentives, which are available on buildings 
