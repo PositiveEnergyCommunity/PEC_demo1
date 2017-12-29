@@ -1,4 +1,4 @@
-var app = angular.module("pecDemo", ['ngStorage','ngRoute']);
+var app = angular.module("pecDemo", ['ngStorage','ngRoute','AxelSoft']);
 
 app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
 	

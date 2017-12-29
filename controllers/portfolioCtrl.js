@@ -71,6 +71,33 @@ angular.module("pecDemo")
 	
 	$scope.selectedOverviewView =2;
 	
+	$scope.breadcrums = [''];
+					
+	$scope.structure = { folders: [
+		{ name: 'Contracts and Legal', folders: [
+			{ name: 'SPV Legal Set-up', files: [{ name: 'SPV Registration.pdf' }] },
+			{ name: 'Operation contracts', files: [{ name: 'Supplier.pdf' }, { name: 'Contractor.pdf' }] },
+			{ name: 'PPAs', files: [{ name: 'Apple Store PPA.pdf' }, { name: 'NTU PPA.pdf' }]}
+		]},
+		{ name: 'Financial Information', files: [{ name: 'File 21.jpg' }, { name: 'File 22.png' }], folders: [
+			{ name: 'Subfolder 21', files: [{ name: 'Subfile 221.txt' }] },
+			{ name: 'Subfolder 22' },
+			{ name: 'Subfolder 23' }
+		]},
+		{ name: 'Customers and Pipeline', files: [{ name: 'File 31.jpg' }, { name: 'File 32.png' }], folders: [
+			{ name: 'Subfolder 31', files: [{ name: 'Subfile 311.txt' }] },
+			{ name: 'Subfolder 32' },
+			{ name: 'Subfolder 33' }
+		]}
+	], files: [{ name: 'File 1.gif' }, { name: 'File 2.gif' }]};
+	
+	$scope.options = {
+		onNodeSelect: function (node, breadcrums) {
+			$scope.breadcrums = breadcrums;
+		}
+	};
+					
+	
 	//-----------------------------------------------------------------------------
 	// Function init()
 	// 	Internal function to init the profile form
