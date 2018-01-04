@@ -55,8 +55,8 @@ app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpPro
    }).
 	
 	when('/logout', {
-      templateUrl: 'home.html',
-      controller: 'logoutCtrl'
+      templateUrl: 'login.html',
+      controller: 'loginCtrl'
    }).
 	
    otherwise({
@@ -83,4 +83,4 @@ app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpPro
    }]);	
 	
 }]);
-			
+		

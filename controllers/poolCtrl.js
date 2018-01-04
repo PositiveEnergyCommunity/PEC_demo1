@@ -3,13 +3,14 @@ angular.module("pecDemo")
 .controller('poolCtrl', function($scope, $location, $http, $interval) {
 	
 	$scope.nameList=[];
+	$scope.poolList=[];
 	
 	$scope.pool = {
 		identity: {
 			legalName: 'Solar Bonds of Malaysia',
 			legalForm: 'SPV to be defined',
 			registrationNb: '1234567890',
-			dateOfCreation: '11/30/2017',
+			dateOfCreation: new Date('11/30/2017'),
 			domiciliation: {
 				street: '1 Ayer Rajah Avenue',
 				zipcode: '385350',
@@ -56,11 +57,11 @@ angular.module("pecDemo")
 			console.log("[init]- status = " + response.status);
 			
 			var length = Object.keys(response.data).length;
-			//console.log("[init]- length = " + length);
-			($scope.nameList).push((response.data[0]).name);
-			for ( var i = 1; i<length; i++) {
+			
+			for ( var i = 0; i<length; i++) {
 				var object = response.data[i];
 				($scope.nameList).push(object.name);
+				$scope.poolList[object.name] = object;
 				console.log("[init]- name = " + object.name);
 			};
 		});
@@ -141,6 +142,19 @@ angular.module("pecDemo")
 			alert("error"); 
 		});
 	};
+	
+	
+	//-----------------------------------------------------------------------------
+	// Function displayPool()
+	// Role : display the new asset form page
+	//-----------------------------------------------------------------------------
+	$scope.displayPool = function(name) {
+		console.log("[displayPool]- begin");
+		console.log("[displayPool]- name = "+name);
+		
+		$scope.pool = ($scope.poolList)[name];
+	}
+	
 	
 	//-----------------------------------------------------------------------------
 	// Function clear()

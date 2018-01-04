@@ -15,8 +15,9 @@
 	<script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
 	
 	<link rel="stylesheet" href="css/style.css">
-	  
+	
 	<script src="js/app.js"></script>
+	<script src="controllers/navCtrl.js"></script>
 	<script src="controllers/assetCtrl.js"></script>
 	<script src="controllers/profileCtrl.js"></script>
 	<script src="controllers/poolCtrl.js"></script>
@@ -27,10 +28,10 @@
 	<link rel="stylesheet" href="modules/treeView/treeviewStyle.css">
 </head>
    
-<body>
+<body ng-app="pecDemo">
 	
 	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
+		<div class="container" ng-controller="navCtrl">
 		<div class="navbar-header">
 			<a class="navbar-brand" href="#">
 			<img src="./pictures/spread.png" width="96" height="58" alt="">
@@ -42,13 +43,13 @@
 				<li><a href="#pool"><span class="glyphicon glyphicon-piggy-bank"></span> POOL</a></li>
 				<li><a href="#portfolio"><span class="glyphicon glyphicon-equalizer"></span> PORTFOLIO</a></li>
 				<li><a href="#profile"><span class="glyphicon glyphicon-user"></span> PROFILE</a></li>
-				<li><a href="#logout"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
+				<li><a href="" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
 			</ul>
 		</div>
 		</div>
 	</nav>
 	
-	<div class="container bg-1" ng-app = "pecDemo">
+	<div class="container bg-1">
 		<div ng-view></div>
 	</div>
 

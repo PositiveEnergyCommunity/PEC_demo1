@@ -65,7 +65,7 @@ angular.module("pecDemo")
 		console.log("[profileCtrl init]- token = " +$localStorage.token);
 		
 		if ($localStorage.token != null) {
-			$http.get("http://localhost:3000/user").
+			$http.get("http://54.254.196.108:3000/user").
 			then(function success(response){
 				console.log("[init]- status = " + response.status);
 				console.log("[init]- email = " + response.data.user.email);
@@ -113,7 +113,7 @@ angular.module("pecDemo")
 			'userStatus': $scope.user.userStatus,
 			'company': $scope.company};
 		
-		$http.put("http://localhost:3000/user/", inData).then(function (data, status, headers, config) { 
+		$http.put("http://54.254.196.108:3000/user/", inData).then(function (data, status, headers, config) { 
 			console.log("[register]- data = " + data);
 			console.log("[register]- status = " + status);
 			console.log("[register]- headers = " + headers);

@@ -103,7 +103,7 @@ angular.module("pecDemo")
 	init = function () {
 		console.log("[initAsset]- Begin");
 		
-		$http.get("http://localhost:3000/assets").then(function(response){
+		$http.get("http://54.254.196.108:3000/assets").then(function(response){
 			console.log("[initAsset]- status = " + response.status);
 			
 			var length = Object.keys(response.data).length;
@@ -202,7 +202,7 @@ angular.module("pecDemo")
 		console.log("[createAsset]- inData = " + inData.address.country);
 		console.log("[createAsset]- scope = " + $scope.address.country);
 		
-		$http.post("http://localhost:3000/asset/", inData).then(function (data, status, headers, config) { 
+		$http.post("http://54.254.196.108:3000/asset/", inData).then(function (data, status, headers, config) { 
 			console.log("[createAsset]- data = " + data);
 			console.log("[createAsset]- status = " + status);
 			console.log("[createAsset]- headers = " + headers);

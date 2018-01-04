@@ -16,7 +16,9 @@
 		<div class="row section">
 			<table class="table">
 				<tbody>
-					<tr ng-repeat = "x in nameList"> <td>{{x}}</td></tr>
+					<tr ng-repeat = "x in nameList"> 
+						<td><a href="" data-target="#"  ng-click="displayAsset(x)">{{x}}</a></td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
@@ -71,11 +73,11 @@
 							</tr>
 							<tr>
 								 <td>Start date</td>
-								 <td>{{dateOfCreation}}</td>
+								 <td>{{dateOfCreation | date }}</td>
 							</tr>
 							<tr>
 								 <td>Commission date</td>
-								 <td>{{dateOfCommission}}</td>
+								 <td>{{dateOfCommission | date}}</td>
 							</tr>
 						</tbody>
 					</table>

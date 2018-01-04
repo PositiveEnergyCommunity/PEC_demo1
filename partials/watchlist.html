@@ -4,7 +4,7 @@
 				<div class="tabbable tabs-below" ng-init="selectedWatchlistTab = 1;"  id="tabOverview">	
 					<ul class="nav nav-tabs">
 						<li ng-class="{active: selectedWatchlistTab == 1}">
-							<a  data-target="#"  ng-click="selectedWatchlistTab = 1;">Watchlist</a>
+							<a  data-target="#"  ng-click="selectedWatchlistTab = 1;setOverview(1)">Watchlist</a>
 						</li>
 						<li ng-class="{active: selectedWatchlistTab == 2}">
                      <a data-target="#" ng-click="selectedWatchlistTab = 2;">Alerts</a>
@@ -26,7 +26,6 @@
 							  <th class = "text-center thPortfolio">Bid size</th>
 							  <th class = "text-center thPortfolio">Ask</th>
 							  <th class = "text-center thPortfolio">Ask size</th>
-							  <th class = "text-center thPortfolio">Delay</th>
 							  <th class = "text-center thPortfolio">%Change</th>
 							</tr>
 						</thead>
@@ -37,7 +36,6 @@
 								<td class = "text-center">200</td>
 								<td class = "text-center">886.50.00</td>
 								<td class = "text-center">300</td>
-								<td class = "text-center"> </td>
 								<td class = "text-center">+2.21%</td>
 							</tr>
 							<tr> 
@@ -46,7 +44,6 @@
 								<td class = "text-center">1000</td>
 								<td class = "text-center">201.00</td>
 								<td class = "text-center">500</td>
-								<td class = "text-center"> </td>
 								<td class = "text-center">+2.53%</td>
 							</tr>
 							<tr> 
@@ -55,7 +52,6 @@
 								<td class = "text-center">2000</td>
 								<td class = "text-center">260.00</td>
 								<td class = "text-center">1200</td>
-								<td class = "text-center"> </td>
 								<td class = "text-center">+3.45%</td>
 							</tr>
 						</tbody>
@@ -78,7 +74,7 @@
 								</thead>
 								<tbody>
 									<tr><td>
-										<a data-target="#"  ng-click="selectedBrowseView = 2;">Malaysia Solar Bonds Pool</a>
+										<a data-target="#"  ng-click="selectedBrowseView = 2;">Sgp Solar Bonds Pool</a>
 									</td></tr>
 									
 									<tr><td>

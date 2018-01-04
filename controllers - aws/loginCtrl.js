@@ -74,7 +74,7 @@ angular.module("pecDemo")
 		console.log("[login]- email = " + $scope.logEmail);
 		console.log("[login]- password = " + $scope.logPassword);
 		
-		$http.get("http://localhost:3000/user/login?logemail=" + $scope.logEmail + "&logpassword="+ $scope.logPassword)
+		$http.get("http://54.254.196.108:3000/user/login?logemail=" + $scope.logEmail + "&logpassword="+ $scope.logPassword)
 		.then(function success(response){
 			console.log("[login]- success response = " + response);
 			console.log("[login]- success type = " + response.type);
@@ -117,7 +117,7 @@ angular.module("pecDemo")
 			'userStatus': $scope.user.userStatus,
 			'company': $scope.company};
 		
-		$http.post("http://localhost:3000/user/", inData).
+		$http.post("http://54.254.196.108:3000/user/", inData).
 		then(function success(response) { 
 			console.log("[register]- success");
 			//console.log("[register]- success data = " + response.data.user.firstname);

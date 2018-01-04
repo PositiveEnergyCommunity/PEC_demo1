@@ -1,8 +1,49 @@
 angular.module("pecDemo")
 
-.controller('logoutCtrl', function($scope, $location, $http, $interval) {
+.controller('poolCtrl', function($scope, $location, $http, $interval) {
 	
+	$scope.nameList=[];
+	$scope.poolList=[];
 	
+	$scope.pool = {
+		identity: {
+			legalName: 'Solar Bonds of Malaysia',
+			legalForm: 'SPV to be defined',
+			registrationNb: '1234567890',
+			dateOfCreation: new Date('11/30/2017'),
+			domiciliation: {
+				street: '1 Ayer Rajah Avenue',
+				zipcode: '385350',
+				city: 'Singapore',
+				province: 'One North',
+				country: 'Singapore'
+			}
+		},
+		name: 'Malaysia Solar Bonds',
+		description: 'This pool is a low risk bond pool on Solar pools in Malaysia',
+		poolManager: 'John Doe',
+		currency: 'USD',
+		investValuation: 3335439.48,
+		cashAccount: 250000,
+		tokens: [
+			{name:"ER Token", supply:8567.54, value:100 },
+			{name:"EP Token", supply:10000, value:8.87 },
+			{name:"EC Token", supply:20000, value:100 },
+			{name:"RECP Token", supply:10000, value:20.58 },
+			{name:"REC Token", supply:32657, value:5.64 }
+		]
+	};
+	
+	var tick = function() {
+		$scope.date = Date.now();
+	}
+	tick();
+	$interval(tick, 1000);
+
+	$scope.image1 = {
+			src:'pictures/pool graph1.png',
+			alt:'chart'
+	};
 	
 	
 	//-----------------------------------------------------------------------------
@@ -12,24 +53,49 @@ angular.module("pecDemo")
 	init = function () {
 		console.log("[initPool]- Begin");
 		
-		$http.get("http://localhost:3000/pools").then(function(response){
+		$http.get("http://54.254.196.108:3000/pools").then(function(response){
 			console.log("[init]- status = " + response.status);
 			
 			var length = Object.keys(response.data).length;
-			//console.log("[init]- length = " + length);
-			($scope.nameList).push((response.data[0]).name);
-			for ( var i = 1; i<length; i++) {
+			
+			for ( var i = 0; i<length; i++) {
 				var object = response.data[i];
 				($scope.nameList).push(object.name);
+				$scope.poolList[object.name] = object;
 				console.log("[init]- name = " + object.name);
 			};
 		});
 	}
 	
 	
+	//-----------------------------------------------------------------------------
+	// Initialize content, depending on which page.
+	//
+	if ($location.path() === "/pool") {
+		console.log("[poolCtrl] - Begin 1");
+		$scope.pagename = "";
+		$scope.buttonlabel = "";
+		init();
+	} 
+	else if ($location.path() === "/newpool") {
+		console.log("[poolCtrl] - Begin 2");
+		$scope.pagename = "New Pool";
+		$scope.buttonlabel = "CREATE";		
+	}
+	else {
+		console.log("[poolCtrl] - Begin 3");
+		$scope.pagename = "Update Pool";
+		$scope.buttonlabel = "UPDATE";
+	}
 	
-	init();
-	
+	angular.element(function () {
+		if ($location.path() === "/newpool"){
+			//console.log('page loading completed - clear');
+			$scope.$apply(function() {
+			$scope.clear();
+			});
+		};
+	});	
 	
 	
 	//-----------------------------------------------------------------------------
@@ -61,7 +127,7 @@ angular.module("pecDemo")
 		
 		console.log("[createPool]- name = " + $scope.pool.name);
 		
-		$http.post("http://localhost:3000/pool/", $scope.pool).then(function (data, status, headers, config) { 
+		$http.post("http://54.254.196.108:3000/pool/", $scope.pool).then(function (data, status, headers, config) { 
 			console.log("[createPool]- data = " + data);
 			console.log("[createPool]- status = " + status);
 			console.log("[createPool]- headers = " + headers);
@@ -76,6 +142,19 @@ angular.module("pecDemo")
 			alert("error"); 
 		});
 	};
+	
+	
+	//-----------------------------------------------------------------------------
+	// Function displayPool()
+	// Role : display the new asset form page
+	//-----------------------------------------------------------------------------
+	$scope.displayPool = function(name) {
+		console.log("[displayPool]- begin");
+		console.log("[displayPool]- name = "+name);
+		
+		$scope.pool = ($scope.poolList)[name];
+	}
+	
 	
 	//-----------------------------------------------------------------------------
 	// Function clear()

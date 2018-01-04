@@ -16,7 +16,9 @@
 		<div class="row section">
 			<table class="table">
 				<tbody>
-					<tr ng-repeat = "x in nameList"> <td>{{x}}</td></tr> 
+					<tr ng-repeat = "x in nameList"> 
+						<td><a href="" data-target="#"  ng-click="displayPool(x)">{{x}}</a></td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
@@ -63,7 +65,7 @@
 								<td>Registration Nb.</td> <td>{{pool.identity.registrationNb}}</td>
 							</tr>
 							<tr>
-								<td>Date of creation</td> <td>{{pool.identity.dateOfCreation}}</td>
+								<td>Date of creation</td> <td>{{pool.identity.dateOfCreation | date}}</td>
 							</tr>
 							<tr>
 								<td>Domiciliation</td>
