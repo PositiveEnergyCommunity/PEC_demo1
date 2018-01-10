@@ -5,34 +5,7 @@ angular.module("pecDemo")
 	$scope.nameList=[];
 	$scope.poolList=[];
 	
-	$scope.pool = {
-		identity: {
-			legalName: 'Solar Bonds of Malaysia',
-			legalForm: 'SPV to be defined',
-			registrationNb: '1234567890',
-			dateOfCreation: new Date('11/30/2017'),
-			domiciliation: {
-				street: '1 Ayer Rajah Avenue',
-				zipcode: '385350',
-				city: 'Singapore',
-				province: 'One North',
-				country: 'Singapore'
-			}
-		},
-		name: 'Malaysia Solar Bonds',
-		description: 'This pool is a low risk bond pool on Solar pools in Malaysia',
-		poolManager: 'John Doe',
-		currency: 'USD',
-		investValuation: 3335439.48,
-		cashAccount: 250000,
-		tokens: [
-			{name:"ER Token", supply:8567.54, value:100 },
-			{name:"EP Token", supply:10000, value:8.87 },
-			{name:"EC Token", supply:20000, value:100 },
-			{name:"RECP Token", supply:10000, value:20.58 },
-			{name:"REC Token", supply:32657, value:5.64 }
-		]
-	};
+	
 	
 	var tick = function() {
 		$scope.date = Date.now();
@@ -125,9 +98,9 @@ angular.module("pecDemo")
 	createPool = function() {
 		console.log("[createPool]- begin");
 		
-		console.log("[createPool]- name = " + $scope.pool.name);
+		console.log("[createPool]- name = " + $rootScope.pool.name);
 		
-		$http.post( $rootScope.serverBaseUrl + "/pool/", $scope.pool).then(function (data, status, headers, config) { 
+		$http.post( $rootScope.serverBaseUrl + "/pool/", $rootScope.pool).then(function (data, status, headers, config) { 
 			console.log("[createPool]- data = " + data);
 			console.log("[createPool]- status = " + status);
 			console.log("[createPool]- headers = " + headers);
@@ -152,7 +125,7 @@ angular.module("pecDemo")
 		console.log("[displayPool]- begin");
 		console.log("[displayPool]- name = "+name);
 		
-		$scope.pool = ($scope.poolList)[name];
+		$rootScope.pool = ($scope.poolList)[name];
 	}
 	
 	
@@ -162,7 +135,7 @@ angular.module("pecDemo")
 	//-----------------------------------------------------------------------------
 	$scope.clear = function() {
 		//console.log("[clear]- begin");
-		$scope.pool = {
+		$rootScope.pool = {
 			identity: {
 				legalName: '',
 				legalForm: '',

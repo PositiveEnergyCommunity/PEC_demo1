@@ -10,13 +10,13 @@
                      <a data-target="#" ng-click="selectedWatchlistTab = 2;">Alerts</a>
                   </li>
                   <li ng-class="{active: selectedWatchlistTab == 3}">
-                     <a data-target="#" ng-click="selectedWatchlistTab = 3;">Browse</a>
+                     <a data-target="#" ng-click="selectedWatchlistTab = 3;;setOverview('pool');">Browse</a>
                   </li>
 					</ul>
 					
 					
 					<div class="tab-content" ng-show="selectedWatchlistTab == 1">
-						<table class="table table-condensed">
+						<table class="table table-condensed borderless">
 						<thead>
 							<tr>
 							  <th class = "text-left thPortfolio"> Instrument</th>
@@ -34,7 +34,7 @@
 								<td class = "text-center">200</td>
 								<td class = "text-center">886.50.00</td>
 								<td class = "text-center">300</td>
-								<td class = "text-center">+2.21%</td>
+								<td class = "text-center" ng-class="{ green: +2.21 > 0 }">+2.21%</td>
 							</tr>
 							<tr> 
 								<td>Sgp Rooftop PV Junior Bond</td>
@@ -42,7 +42,7 @@
 								<td class = "text-center">1000</td>
 								<td class = "text-center">201.00</td>
 								<td class = "text-center">500</td>
-								<td class = "text-center">+2.53%</td>
+								<td class = "text-center" ng-class="{ green: +2.53 > 0 }">+2.53%</td>
 							</tr>
 							<tr> 
 								<td>India Bihar Solar 12%-Bond</td>
@@ -50,7 +50,7 @@
 								<td class = "text-center">2000</td>
 								<td class = "text-center">260.00</td>
 								<td class = "text-center">1200</td>
-								<td class = "text-center">+3.45%</td>
+								<td class="text-center" ng-class="{ red: -3.45 < 0 }">-3.45%</td>
 							</tr>
 						</tbody>
 						</table>
@@ -64,7 +64,7 @@
 						<div ng-init="selectedBrowseView = 1;">
 						
 						<div ng-show="selectedBrowseView == 1">
-							<table class="table table-condensed">
+							<table class="table table-condensed borderless">
 								<thead>
 									<tr>
 									  <th class = "text-left thPortfolio"> Pools and Categories</th>
@@ -72,20 +72,24 @@
 								</thead>
 								<tbody>
 									<tr class="active" data-target="#" ng-click="selectedBrowseView = 2;">
-										<td >Sgp Solar Bonds Pool</td>
+										<td >SunSeap_Solar_SEA_A - Solar Asia</td>
 									</td></tr>
 									
 									<tr data-target="#" ng-click="selectedBrowseView = 3;">
-										<td>Solar Assets Instruments</td>
+										<td>Moser Baer_Solar_India_A - Solar India</td>
 									</tr>
 									
 									<tr data-target="#" ng-click="selectedBrowseView = 4;">
-										<td>Wind Assets Instruments</td>
+										<td>Moser Baer_Wind_India_A - Wind India</td>
 									</td></tr>
+									
+									<tr><td> </br> </td></tr>
 
 									<tr data-target="#" ng-click="selectedBrowseView = 5;">
-										<td>Other Assets Instruments</td>
+										<td>Featured New Pools</td>
 									</tr>
+									
+									<tr><td> </br> </td></tr>
 									
 									<tr data-target="#" ng-click="selectedBrowseView = 6;">
 										<td>Stocks by Region</td>
@@ -104,7 +108,7 @@
 					
 					<div ng-show="selectedBrowseView == 2">
 						<div>
-							<table class="table table-hover table-condensed">
+							<table class="table table-hover table-condensed borderless">
 								<thead>
 									<tr>
 									  <th class = "text-left thPortfolio"> Instrument</th>
@@ -121,16 +125,16 @@
 										<td class = "text-center">39.00</td>
 										<td class = "text-center">39.00</td>
 										<td class = "text-center">39.05</td>
-										<td class = "text-center">0.00%</td>
+										<td class = "text-center" ng-class="{ green: +0.00 >= 0 }">0.00%</td>
 										<td class = "text-center">0.00</td>
 									</tr>
 									<tr id="myAsset" class="collapse">
 										<td colspan="6">
 											<table class="table table-hover table-condensed borderless">
-												<tr data-target="#" ng-click="setOverview(2)"><td>
+												<tr data-target="#" ng-click="setOverview('asset')"><td>
 													Block 311B Clementi Rooftop PV Asset
 												</td></tr>
-												<tr data-target="#" ng-click="setOverview(3)"><td>
+												<tr data-target="#" ng-click="setOverview('asset')"><td>
 													Block 71 One North Rooftop PV Asset
 												</td></tr>
 											</table>
@@ -141,7 +145,7 @@
 										<td class = "text-center">96.60</td>
 										<td class = "text-center">96.40</td>
 										<td class = "text-center">96.45</td>
-										<td class = "text-center">0.10%</td>
+										<td class = "text-center" ng-class="{ green: +0.10 > 0 }">0.10%</td>
 										<td class = "text-center">0.10</td>
 									</tr>
 									<tr> 
@@ -149,7 +153,7 @@
 										<td class = "text-center">66.65</td>
 										<td class = "text-center">66.45</td>
 										<td class = "text-center">66.60</td>
-										<td class = "text-center">0.54%</td>
+										<td class = "text-center" ng-class="{ green: +0.54 > 0 }">0.54%</td>
 										<td class = "text-center">0.35</td>
 									</tr>
 									
@@ -158,7 +162,7 @@
 										<td class = "text-center">7.23</td>
 										<td class = "text-center">7.23</td>
 										<td class = "text-center">7.24</td>
-										<td class = "text-center">-3.21%</td>
+										<td class = "text-center" ng-class="{ red: -3.21 < 0 }">-3.21%</td>
 										<td class = "text-center">-0.24</td>
 									</tr>
 									
@@ -167,7 +171,7 @@
 										<td class = "text-center">7.23</td>
 										<td class = "text-center">7.23</td>
 										<td class = "text-center">7.24</td>
-										<td class = "text-center">-3.21%</td>
+										<td class = "text-center" ng-class="{ red: -3.21 < 0 }">-3.21%</td>
 										<td class = "text-center">-0.24</td>
 									</tr>
 									

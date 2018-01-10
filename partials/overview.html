@@ -24,7 +24,7 @@
 					<div class="tab-content" ng-show="selectedTab == 1">
 						<div id="overview">
 						
-						<div ng-show="testOverview(1);">
+						<div ng-show="testOverview('instrument');">
 							<table class="table">
 							<thead>
 								<tr>
@@ -40,11 +40,11 @@
 							<tbody>
 								<tr> 
 									<td class = "text-left"	>Jan 4-12:07</td>
-									<td class = "text-center">2.44</td>
-									<td class = "text-center">2.34%</td>
-									<td class = "text-center">99.50</td>
-									<td class = "text-center">102.25</td>
-									<td class = "text-center">2000</td>
+									<td class = "text-center">19.55</td>
+									<td class = "text-center"  ng-class="{ green: +2.21 >= 0 }">2.21%</td>
+									<td class = "text-center">885.00</td>
+									<td class = "text-center">886.50</td>
+									<td class = "text-center">200</td>
 									<td class = "text-center">Jan 4-12:15</td>
 								</tr>
 							</tbody>
@@ -54,8 +54,12 @@
 							</div>
 						</div>
 						
-						<div class="tab-content marginTab" ng-show="testOverview(2)">
+						<div class="tab-content marginTab" ng-show="testOverview('asset')">
 							<div ng-include="'partials/portfolioAsset.html'"></div>
+						</div>
+						
+						<div class="tab-content marginTab" ng-show="testOverview('pool')">
+							<div ng-include="'partials/portfolioPool.html'"></div>
 						</div>
 						
 						</div>	<!-- end of div ng-init selectedBrowseView -->

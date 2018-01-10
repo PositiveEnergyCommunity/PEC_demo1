@@ -52,6 +52,7 @@ h2 {
 .navbar-nav  li a:focus {
 	color: #1abc9c !important;
 }
+
 .nav-tabs > li > a
 {
    padding-bottom: 2px;
@@ -67,7 +68,7 @@ h2 {
    background-color: #A0A0A0; 	
 }
 
-
+.table > thead > tr,
 .table > tbody > tr {
    color: #323232;
 	background-color: #A0A0A0;
@@ -76,6 +77,11 @@ h2 {
 .table > tbody > tr:hover td {
    color: #E0E0E0;
    background-color: #808080;
+}
+.table-disable-hover.table tbody tr:hover td,
+.table-disable-hover.table tbody tr:hover th {
+   color: #323232;
+	background-color: #A0A0A0;
 }
 
 .slide {
@@ -172,7 +178,7 @@ h2 {
 	height: 400px;
 }
 .thPortfolio {
-	font-weight: normal;
+	font-weight: bold;
 }
 .bg-1 {
     background: #323232;
@@ -190,5 +196,11 @@ h2 {
 	margin-right: 0px;
 	height: 350px;
 	overflow: auto;
+}
+.red {
+	color: red;
+}
+.green {
+	color: green;
 }
 

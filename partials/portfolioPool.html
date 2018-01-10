@@ -1,0 +1,144 @@
+<div>
+<p> SunSeap_Solar_SEA_A - Solar Asia</p>
+<div id="tabAsset" class="tabbable tabs-below" ng-init="selectedAssetTab = 'overview';">	
+	<ul class="nav nav-tabs">
+		<li ng-class="{active: selectedAssetTab == 'overview'}">
+			<a  data-target="#"  ng-click="selectedAssetTab = 'overview';">Overview</a>
+		</li>
+		<li ng-class="{active: selectedAssetTab == 'governance'}">
+			<a data-target="#" ng-click="selectedAssetTab = 'governance';">Governance</a>
+		</li>
+		<li ng-class="{active: selectedAssetTab == 'analysis'}">
+			<a data-target="#" ng-click="selectedAssetTab = 'analysis';">Analysis</a>
+		</li>
+		<li ng-class="{active: selectedAssetTab == 'instruments'}">
+			<a data-target="#" ng-click="selectedAssetTab = 'instruments';">Instruments</a>
+		</li>
+		<li ng-class="{active: selectedAssetTab == 'assets'}">
+			<a data-target="#" ng-click="selectedAssetTab = 'assets';">Assets</a>
+		</li>
+	</ul>
+	
+	<div class="tab_content" ng-show="selectedAssetTab == 'overview'">
+		<table class="table table-condensed borderless table-disable-hover">
+		<tr>
+			<td>
+				<table class="table table-condensed borderless table-disable-hover">
+					<thead>
+						<tr>
+						  <th class = "text-left thPortfolio"> Key facts</th>
+						  <th> </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Domiciled</td>
+							<td>{{pool.identity.domiciliation.country}}</td>
+						</tr>
+						<tr>
+							<td>Currency</td>
+							<td>{{pool.currency}}</td>
+						</tr>
+						<tr>
+							 <td>Net Asset Value</td>
+							 <td>{{pool.investValuation | number}}</td>
+						</tr>
+						<tr>
+							 <td>Initial Value</td>
+							 <td>{{pool.investValuation | number}}</td>
+						</tr>
+						<tr>
+							 <td>Date of creation</td>
+							 <td>{{pool.identity.dateOfCreation | date}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+			<td>
+				<table class="table table-condensed borderless table-disable-hover">
+					<thead>
+						<tr>
+						  <th class = "text-left thPortfolio"> Fees and Expenses</th>
+						  <th> </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Management Fees</td>
+							<td>{{pool.managementFees*100 | number:1}}%</td>
+						</tr>
+						<tr>
+							<td>O&M Fees</td>
+							<td>{{pool.oAndMFees*100 | number:1}}%</td>
+						</tr>
+						<tr>
+							 <td>Performance Fees</td>
+							 <td>{{pool.performanceFees*100 | number:1}}%</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="6">
+				<table class="table table-condensed borderless table-disable-hover">
+					<thead>
+						<tr>
+						  <th class = "text-left thPortfolio"> Investment Policy</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td >
+								"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+								non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		</table>
+					
+	</div>
+	
+	<div class="tab_content" ng-show="selectedAssetTab == 'governance'">
+		Here we will display the Pool Manager details<br>
+		Company details<br>
+		Managers Profiles<br>
+		FirstName LASTNAME + Picture<br>
+		Bio (50 words max)<br>
+		Linkedin profile link<br>
+	</div>
+	
+	<div class="tab_content" ng-show="selectedAssetTab == 'analysis'">
+		Here we will display the Pool's financial performances<br>
+		and analysis<br>
+		Pool Analysis:<br>
+		- Nb Assets	: 15<br>
+		- Ratio Solar /Wind: 100% / 0%<br>
+		- Average Asset Age: 7,3 years<br><br>
+		
+		- Pool_Code - Equity 30 <br>
+		- Pool_Code - Bond_Rate_EndDate (ii) 30<br>
+		- Pool_Code - Bond_Rate_EndDate (iii) 30<br>
+		- Cash in bank 10<br>
+
+	</div>
+	
+	<div class="tab_content" ng-show="selectedAssetTab == 'instruments'">
+		Here we will display the Pool's instruments<br>
+
+	</div>
+	
+	<div class="tab_content" ng-show="selectedAssetTab == 'assets'">
+		<p>Here the pool assets will be listed</p>
+	</div>
+	
+</div>
+</div>

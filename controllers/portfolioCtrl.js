@@ -67,7 +67,7 @@ angular.module("pecDemo")
 			alt:'chart'
 	};
 	
-	$scope.selectedOverviewView =1;
+	$scope.selectedOverviewView = "instrument";
 	
 	$scope.breadcrums = [''];
 					
