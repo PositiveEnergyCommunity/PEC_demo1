@@ -7,11 +7,9 @@
 angular.module("pecDemo")
 
 .controller('portfolioCtrl', function($rootScope, $scope, $location, $http, $routeParams, $localStorage, $interval) {
-	$scope.pagename = 'Profile Update';
-	$scope.button = 'UPDATE';
-	
+
 	$scope.portfolio = {
-		currency: '',
+		currency: 'USD',
 		investValuation: 767100.00,
 		cashAccount: 285600.00,
 		margin: 52000.00,
@@ -65,7 +63,7 @@ angular.module("pecDemo")
 	$interval(tick, 1000);
 	
 	$scope.image1 = {
-			src:'pictures/pool graph1.png',
+			src:'pictures/pool graph2.png',
 			alt:'chart'
 	};
 	

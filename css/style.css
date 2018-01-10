@@ -1,6 +1,7 @@
 body { 
 	font-family: arial; 
-	font-size: 10pt; 
+	font-size: 10pt;
+	background: #323232;
 	}
 	
 table { 
@@ -10,6 +11,7 @@ table {
 
 h2 {
 	text-align: center;
+	color:#D0D0D0 !important;
 }
 
 .h2title {
@@ -37,24 +39,45 @@ h2 {
 	font-size: 12px;
 	letter-spacing: 3px;
 	margin-bottom: 0px;
+	background: #323232;
  }
 .navbar-nav {  
   	padding-top: 10px;
 	padding-bottom: 0px;
 }
-.navbar-nav  li a:hover {
-	color: #1abc9c !important;
+.navbar-nav  li a {
+	color: #E0E0E0 !important;
 }
-.nav-tabs > li.active
-{
-	font-weight: bold;
+.navbar-nav  li a:hover,
+.navbar-nav  li a:focus {
+	color: #1abc9c !important;
 }
 .nav-tabs > li > a
 {
-    /* adjust padding for height*/
-	 padding-top: 3px; 
-    padding-bottom: 2px;
+   padding-bottom: 2px;
+	color:#323232 !important;
+	background-color: #A0A0A0; 
+	border-bottom: 1px solid #D8D8D8;
 }
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus{
+	font-weight: bold;
+   color: #E0E0E0 !important;
+   background-color: #A0A0A0; 	
+}
+
+
+.table > tbody > tr {
+   color: #323232;
+	background-color: #A0A0A0;
+}
+.table > tbody > tr.active td,
+.table > tbody > tr:hover td {
+   color: #E0E0E0;
+   background-color: #808080;
+}
+
 .slide {
 	interval : 8000;
 }
@@ -108,18 +131,20 @@ h2 {
     padding: 50px 20px;
 } 
 .bg-0 {
-    background: #fff;
-    color: #bdbdbd;
+    background: #323232;
+    color:#E0E0E0;
     padding-top: 70px;
 }
 .panel-body {
 	border: 2px solid #999; 
-	background: #CCC; 
+	background: #A0A0A0;
+	color: #323232;
 	padding: 15px;
 }
 .panel-body2 {
 	border: 1px solid #CCC; 
-	background: #fff; 
+	background: #A0A0A0;
+	color: #323232;
 	padding: 15px;
 }
 .rowpad {
@@ -150,11 +175,16 @@ h2 {
 	font-weight: normal;
 }
 .bg-1 {
-    background: #fff;
-    color: #303030;
+    background: #323232;
+    color:#E0E0E0;
     padding-top: 60px;
 	 margin-top:20px;
 }
+.bg-pec {
+    background: #323232;
+    color:#E0E0E0;
+}
+
 .marginTab {
 	margin:10px;
 	margin-right: 0px;

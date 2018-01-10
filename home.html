@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="modules/treeView/treeviewStyle.css">
 </head>
    
-<body ng-app="pecDemo">
+<body class="bg-pec" ng-app="pecDemo">
 	
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container" ng-controller="navCtrl">
@@ -39,10 +39,12 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
+			<!--
 				<li><a href="#asset"><span class="glyphicon glyphicon-leaf"></span> ASSETS</a></li>
 				<li><a href="#pool"><span class="glyphicon glyphicon-piggy-bank"></span> POOL</a></li>
+			-->
 				<li><a href="#portfolio"><span class="glyphicon glyphicon-equalizer"></span> PORTFOLIO</a></li>
-				<li><a href="#profile"><span class="glyphicon glyphicon-user"></span> PROFILE</a></li>
+				<li><a href="#profile"><span class="glyphicon glyphicon-user"></span>{{user.firstname | uppercase}} {{user.lastname | uppercase}}</a></li>
 				<li><a href="" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
 			</ul>
 		</div>

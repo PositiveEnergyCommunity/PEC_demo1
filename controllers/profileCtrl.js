@@ -10,7 +10,7 @@ angular.module("pecDemo")
 	$scope.pagename = 'Profile Update';
 	$scope.button = 'UPDATE';
 	
-	$scope.user = {
+	$rootScope.user = {
 		email: 'warren@gold.com',
 		firstname: 'Warren',
 		lastname: 'Buffet',
@@ -70,11 +70,11 @@ angular.module("pecDemo")
 			then(function success(response){
 				console.log("[init]- status = " + response.status);
 				console.log("[init]- email = " + response.data.user.email);
-				$scope.user.email = response.data.user.email;
-				$scope.user.firstname = response.data.user.firstname;
-				$scope.user.lastname = response.data.user.lastname;
-				$scope.user.title = response.data.user.title;
-				$scope.user.phone = response.data.user.phone;
+				$rootScope.user.email = response.data.user.email;
+				$rootScope.user.firstname = response.data.user.firstname;
+				$rootScope.user.lastname = response.data.user.lastname;
+				$rootScope.user.title = response.data.user.title;
+				$rootScope.user.phone = response.data.user.phone;
 				$scope.company = response.data.company;
 				console.log("[profileCtrl init]- token = " +$localStorage.token);
 				},
@@ -105,15 +105,15 @@ angular.module("pecDemo")
 		
 		var inData = {
 			'id': null,
-			'title': $scope.user.title,
-			'firstname': $scope.user.firstname,
-			'lastname': $scope.user.lastname,
-			'email': $scope.user.email, 
-			'password': $scope.user.password,
+			'title': $rootScope.user.title,
+			'firstname': $rootScope.user.firstname,
+			'lastname': $rootScope.user.lastname,
+			'email': $rootScope.user.email, 
+			'password': $rootScope.user.password,
 			'passwordConf': $scope.passwordConf,
-			'phone': $scope.user.phone,
-			'profile': $scope.user.profile,
-			'userStatus': $scope.user.userStatus,
+			'phone': $rootScope.user.phone,
+			'profile': $rootScope.user.profile,
+			'userStatus': $rootScope.user.userStatus,
 			'company': $scope.company};
 		
 		$http.put( $rootScope.serverBaseUrl + "/user/", inData).then(function (data, status, headers, config) { 

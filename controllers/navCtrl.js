@@ -9,8 +9,8 @@ angular.module("pecDemo")
 .controller('navCtrl', function($rootScope, $scope, $window, $localStorage) {
 	
 	//-----------------------------------------------------------------------------
-	// Function selectTimer
-	// Role : Set the selected fixed digit of the operation.
+	// Function logout
+	// Role : Log out the user. Reset the token in the localStorage
 	//-----------------------------------------------------------------------------	
 	$scope.logout = function () {
 		console.log("[logout] - Begin");

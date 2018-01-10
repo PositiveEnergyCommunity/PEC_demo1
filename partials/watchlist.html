@@ -1,4 +1,4 @@
-			<div class="panel portfolio">
+			<div class="panel portfolio bg-pec">
 			<div class="panel-body2 panelPortfolio">
 				
 				<div class="tabbable tabs-below" ng-init="selectedWatchlistTab = 1;"  id="tabOverview">	
@@ -12,8 +12,6 @@
                   <li ng-class="{active: selectedWatchlistTab == 3}">
                      <a data-target="#" ng-click="selectedWatchlistTab = 3;">Browse</a>
                   </li>
-						<button type="button" class="btn btn-primary btn-xs pull-right">EDIT</button>
-						
 					</ul>
 					
 					
@@ -73,40 +71,40 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr><td>
-										<a data-target="#"  ng-click="selectedBrowseView = 2;">Sgp Solar Bonds Pool</a>
+									<tr class="active" data-target="#" ng-click="selectedBrowseView = 2;">
+										<td >Sgp Solar Bonds Pool</td>
 									</td></tr>
 									
-									<tr><td>
-										<a data-target="#"  ng-click="selectedBrowseView = 3;">Solar Assets Instruments</a>
-									</td></tr>
+									<tr data-target="#" ng-click="selectedBrowseView = 3;">
+										<td>Solar Assets Instruments</td>
+									</tr>
 									
-									<tr><td>
-										<a data-target="#"  ng-click="selectedBrowseView = 4;">Wind Assets Instruments</a>
+									<tr data-target="#" ng-click="selectedBrowseView = 4;">
+										<td>Wind Assets Instruments</td>
 									</td></tr>
 
-									<tr><td>
-										<a data-target="#"  ng-click="selectedBrowseView = 5;">Other Assets Instruments</a>
-									</td></tr>
+									<tr data-target="#" ng-click="selectedBrowseView = 5;">
+										<td>Other Assets Instruments</td>
+									</tr>
 									
-									<tr><td>
-										<a data-target="#"  ng-click="selectedBrowseView = 6;">Stocks by Region</a>
-									</td></tr>
+									<tr data-target="#" ng-click="selectedBrowseView = 6;">
+										<td>Stocks by Region</td>
+									</tr>
 									
-									<tr><td>
-										<a data-target="#"  ng-click="selectedBrowseView = 7;">Bonds Developed Markets</a>
-									</td></tr>
+									<tr data-target="#" ng-click="selectedBrowseView = 7;">
+										<td>Bonds Developed Markets</td>
+									</tr>
 									
-									<tr><td>
-										<a data-target="#"  ng-click="selectedBrowseView = 8;">Bonds Emerging Markets</a>
-									</td></tr>
+									<tr data-target="#" ng-click="selectedBrowseView = 8;">
+										<td>Bonds Emerging Markets</td>
+									</tr>
 								</tbody>
 							</table>
 					</div>
 					
 					<div ng-show="selectedBrowseView == 2">
 						<div>
-							<table class="table table-condensed table-hover">
+							<table class="table table-hover table-condensed">
 								<thead>
 									<tr>
 									  <th class = "text-left thPortfolio"> Instrument</th>
@@ -128,11 +126,11 @@
 									</tr>
 									<tr id="myAsset" class="collapse">
 										<td colspan="6">
-											<table class="table table-condensed noMargin table-hover borderless">
-												<tr class="clickable" ng-click="setOverview(2)"><td>
+											<table class="table table-hover table-condensed borderless">
+												<tr data-target="#" ng-click="setOverview(2)"><td>
 													Block 311B Clementi Rooftop PV Asset
 												</td></tr>
-												<tr class="clickable"><td>
+												<tr data-target="#" ng-click="setOverview(3)"><td>
 													Block 71 One North Rooftop PV Asset
 												</td></tr>
 											</table>
