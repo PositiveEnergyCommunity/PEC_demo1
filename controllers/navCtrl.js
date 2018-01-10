@@ -6,7 +6,7 @@
 
 angular.module("pecDemo")
 
-.controller('navCtrl', function($scope, $window, $localStorage) {
+.controller('navCtrl', function($rootScope, $scope, $window, $localStorage) {
 	
 	//-----------------------------------------------------------------------------
 	// Function selectTimer

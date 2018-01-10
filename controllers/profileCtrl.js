@@ -6,7 +6,7 @@
 
 angular.module("pecDemo")
 
-.controller('profileCtrl', function($scope, $window, $location, $http, $routeParams, $localStorage, $interval) {
+.controller('profileCtrl', function($rootScope, $scope, $window, $location, $http, $routeParams, $localStorage, $interval) {
 	$scope.pagename = 'Profile Update';
 	$scope.button = 'UPDATE';
 	
@@ -63,9 +63,10 @@ angular.module("pecDemo")
 		};
 			
 		console.log("[profileCtrl init]- token = " +$localStorage.token);
+		console.log("[login]- server url = " + $rootScope.serverBaseUrl );
 		
 		if ($localStorage.token != null) {
-			$http.get("http://localhost:3000/user").
+			$http.get( $rootScope.serverBaseUrl + "/user").
 			then(function success(response){
 				console.log("[init]- status = " + response.status);
 				console.log("[init]- email = " + response.data.user.email);
@@ -95,10 +96,12 @@ angular.module("pecDemo")
 	// Function update()
 	// Role : Update user's information
 	//-----------------------------------------------------------------------------
-	$scope.update = function() {
-		console.log("[register]- begin");
-		console.log("[register]- email = " + $scope.email);
-		console.log("[register]- password = " + $scope.password);
+	$scope.newFormButtonAction = function() {
+		update();
+	}
+	
+	update = function() {
+		console.log("[update]- begin");
 		
 		var inData = {
 			'id': null,
@@ -113,17 +116,19 @@ angular.module("pecDemo")
 			'userStatus': $scope.user.userStatus,
 			'company': $scope.company};
 		
-		$http.put("http://localhost:3000/user/", inData).then(function (data, status, headers, config) { 
-			console.log("[register]- data = " + data);
-			console.log("[register]- status = " + status);
-			console.log("[register]- headers = " + headers);
-			console.log("[register]- config = " + config);
-			alert("success"); 
+		$http.put( $rootScope.serverBaseUrl + "/user/", inData).then(function (data, status, headers, config) { 
+			console.log("[update]- data = " + data);
+			console.log("[update]- status = " + status);
+			console.log("[update]- headers = " + headers);
+			console.log("[update]- config = " + config);
+			//alert("success"); 
+			$location.path("/profile");
+			
 		},function (data, status, headers, config) { 
-			console.log("[register]- data = " + data);
-			console.log("[register]- status = " + status);
-			console.log("[register]- headers = " + headers);
-			console.log("[register]- config = " + config);
+			console.log("[update]- data = " + data);
+			console.log("[update]- status = " + status);
+			console.log("[update]- headers = " + headers);
+			console.log("[update]- config = " + config);
 			alert("error"); 
 		});
 	}
@@ -140,16 +145,5 @@ angular.module("pecDemo")
 		console.log("[selectDuration]- text = " + text);
 		$("#btnTimerSelect").html(text + '&nbsp;<span class="caret"></span>');
 	}
-
-	//-----------------------------------------------------------------------------
-	// Function selectTimer
-	// Role : Set the selected fixed digit of the operation.
-	//-----------------------------------------------------------------------------	
-	$scope.logout = function () {
-		console.log("[logout] - Begin");
-		var url =  './login.html';
-		$window.location.href = url;
-	}
-	
 	
 });

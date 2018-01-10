@@ -6,7 +6,7 @@
 
 angular.module("pecDemo")
 
-.controller("loginCtrl", function($scope, $http, $window, loginService ) {
+.controller("loginCtrl", function($rootScope, $scope, $http, $window, loginService ) {
 	
 	$scope.pagename = 'Register New User';
 	$scope.button = 'REGISTER';
@@ -53,8 +53,8 @@ angular.module("pecDemo")
 	$scope.errorstatus;
 
 	//-----------------------------------------------------------------------------
-	// Function login()
-	// Role : Log in a user
+	// Function logout()
+	// Role : Log out a user
 	//-----------------------------------------------------------------------------
    $scope.logout = function() {
       loginService.logout(function() {
@@ -73,11 +73,11 @@ angular.module("pecDemo")
 		console.log("[login]- begin");
 		console.log("[login]- email = " + $scope.logEmail);
 		console.log("[login]- password = " + $scope.logPassword);
+		console.log("[login]- server url = " + $rootScope.serverBaseUrl );
 		
-		$http.get("http://localhost:3000/user/login?logemail=" + $scope.logEmail + "&logpassword="+ $scope.logPassword)
+		$http.get( $rootScope.serverBaseUrl+ "/user/login?logemail=" + $scope.logEmail + "&logpassword="+ $scope.logPassword)
 		.then(function success(response){
-			console.log("[login]- success response = " + response);
-			console.log("[login]- success type = " + response.type);
+			console.log("[login]- success type = " + response.data.type);
 					
 			var url =  './home.html#/profilestart?data='+response.data.token;
 			$window.location.href = url;
@@ -97,7 +97,11 @@ angular.module("pecDemo")
 	// Function register()
 	// Role : Create a new user
 	//-----------------------------------------------------------------------------
-	$scope.register = function() {
+	$scope.newFormButtonAction = function() {
+		register();
+	}
+	
+	register = function() {
 		console.log("[register]- begin");
 		console.log("[register]- email = " + $scope.user.email);
 		console.log("[register]- password = " + $scope.user.password);
@@ -117,7 +121,7 @@ angular.module("pecDemo")
 			'userStatus': $scope.user.userStatus,
 			'company': $scope.company};
 		
-		$http.post("http://localhost:3000/user/", inData).
+		$http.post( $rootScope.serverBaseUrl + "/user/", inData).
 		then(function success(response) { 
 			console.log("[register]- success");
 			//console.log("[register]- success data = " + response.data.user.firstname);

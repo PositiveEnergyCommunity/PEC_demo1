@@ -6,15 +6,15 @@
 
 angular.module("pecDemo")
 
-.controller('portfolioCtrl', function($scope, $location, $http, $routeParams, $localStorage, $interval) {
+.controller('portfolioCtrl', function($rootScope, $scope, $location, $http, $routeParams, $localStorage, $interval) {
 	$scope.pagename = 'Profile Update';
 	$scope.button = 'UPDATE';
 	
 	$scope.portfolio = {
 		currency: '',
-		investValuation: 0,
-		cashAccount: 0,
-		margin: 0,
+		investValuation: 767100.00,
+		cashAccount: 285600.00,
+		margin: 52000.00,
 		tokens: [
 			{name:"ER Token", supply:8567.54, value:100 },
 			{name:"EP Token", supply:10000, value:8.87 },
@@ -112,7 +112,7 @@ angular.module("pecDemo")
 			
 		console.log("[profileCtrl init]- token = " +$localStorage.token);
 		
-		$http.get("http://localhost:3000/user").
+		$http.get( $rootScope.serverBaseUrl + "/user").
 		then(function success(response){
 			console.log("[init]- status = " + response.status);
 			console.log("[init]- email = " + response.data.user.email);
@@ -155,7 +155,7 @@ angular.module("pecDemo")
 			'userStatus': $scope.user.userStatus,
 			'company': $scope.company};
 		
-		$http.put("http://localhost:3000/user/", inData).then(function (data, status, headers, config) { 
+		$http.put( $rootScope.serverBaseUrl + "/user/", inData).then(function (data, status, headers, config) { 
 			console.log("[register]- data = " + data);
 			console.log("[register]- status = " + status);
 			console.log("[register]- headers = " + headers);

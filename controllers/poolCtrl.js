@@ -1,6 +1,6 @@
 angular.module("pecDemo")
 
-.controller('poolCtrl', function($scope, $location, $http, $interval) {
+.controller('poolCtrl', function($rootScope, $scope, $location, $http, $interval) {
 	
 	$scope.nameList=[];
 	$scope.poolList=[];
@@ -53,7 +53,7 @@ angular.module("pecDemo")
 	init = function () {
 		console.log("[initPool]- Begin");
 		
-		$http.get("http://localhost:3000/pools").then(function(response){
+		$http.get( $rootScope.serverBaseUrl + "/pools").then(function(response){
 			console.log("[init]- status = " + response.status);
 			
 			var length = Object.keys(response.data).length;
@@ -127,7 +127,7 @@ angular.module("pecDemo")
 		
 		console.log("[createPool]- name = " + $scope.pool.name);
 		
-		$http.post("http://localhost:3000/pool/", $scope.pool).then(function (data, status, headers, config) { 
+		$http.post( $rootScope.serverBaseUrl + "/pool/", $scope.pool).then(function (data, status, headers, config) { 
 			console.log("[createPool]- data = " + data);
 			console.log("[createPool]- status = " + status);
 			console.log("[createPool]- headers = " + headers);

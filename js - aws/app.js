@@ -1,7 +1,7 @@
 var app = angular.module("pecDemo", ['ngStorage','ngRoute','AxelSoft']);
 
 app.run(function($rootScope) {
-    $rootScope.serverBaseUrl = 'http://localhost:3000';
+    $rootScope.serverBaseUrl = 'http://13.250.74.140:3000';
 });
 
 app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
