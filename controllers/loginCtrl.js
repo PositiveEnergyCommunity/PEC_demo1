@@ -13,13 +13,17 @@ angular.module("pecDemo")
 		
 	$scope.user = {
 		email: '',
+		password: '',
 		firstname: '',
 		lastname: '',
-		title: '',
+		prefix: '',
 		phone: '',
-		password: '',
-		profile: '',
 		userStatus: '',
+		company_Id:'',
+		title:'',
+		portfolio_Id:'',
+		profile: '',
+		description:''
 	}
 	
 	$scope.passwordConf = '';
@@ -110,16 +114,19 @@ angular.module("pecDemo")
 		
 		var inData = {
 			'id': null,
-			'title': $scope.user.title,
+			'prefix': $scope.user.prefix,
 			'firstname': $scope.user.firstname,
 			'lastname': $scope.user.lastname,
 			'email': $scope.user.email, 
 			'password': $scope.user.password,
 			'passwordConf': $scope.passwordConf,
 			'phone': $scope.user.phone,
-			'profile': $scope.user.profile,
 			'userStatus': $scope.user.userStatus,
-			'company': $scope.company};
+			'company': $scope.company,
+			'title': $scope.user.title,
+			'profile': $scope.user.profile,
+			'description': $scope.user.description,
+			};
 		
 		$http.post( $rootScope.serverBaseUrl + "/user/", inData).
 		then(function success(response) { 

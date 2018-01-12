@@ -14,10 +14,10 @@ angular.module("pecDemo")
 		cashAccount: 285600.00,
 		margin: 52000.00,
 		tokens: [
-			{name:"ER Token", supply:8567.54, value:100 },
-			{name:"EP Token", supply:10000, value:8.87 },
-			{name:"EC Token", supply:20000, value:100 },
-			{name:"RECP Token", supply:10000, value:20.58 },
+			{name:"Energy PPA Bond Token", supply:8567.54, value:100 },
+			{name:"Energy PPA Equity Token", supply:10000, value:8.87 },
+			{name:"Energy PPA Purchase Token", supply:20000, value:100 },
+			{name:"REC Equity Token", supply:10000, value:20.58 },
 			{name:"REC Token", supply:32657, value:5.64 }
 		]
 	};
@@ -94,6 +94,8 @@ angular.module("pecDemo")
 			$scope.breadcrums = breadcrums;
 		}
 	};
+	
+	$scope.sign='+';
 					
 	
 	//-----------------------------------------------------------------------------
@@ -170,19 +172,16 @@ angular.module("pecDemo")
 	
 	
 	//-----------------------------------------------------------------------------
-	// Function assetOverview()
+	// Function setOverview()
 	// Role : goToAsset View page
 	//-----------------------------------------------------------------------------
 	$scope.setOverview = function(view) {
-		console.log("[assetOverview]- begin");
-		console.log("[assetOverview]- selectedOverviewView before= " + $scope.selectedOverviewView);
+		console.log("[setOverview]- "+view);
 		$scope.selectedOverviewView = view;
-		console.log("[assetOverview]- selectedOverviewView after= " + $scope.selectedOverviewView);
 	}
 	
 	$scope.testOverview = function(view) {
-		console.log("[testOverview]- begin");
-		//console.log("[testOverview]- selectedOverviewView = " + $scope.selectedOverviewView);
+		//console.log("[testOverview]- " + view);
 		if ($scope.selectedOverviewView === view) {
 			//console.log("[testOverview]- true");
 			return true;
@@ -193,6 +192,24 @@ angular.module("pecDemo")
 		}
 	}
 
+	
+	//-----------------------------------------------------------------------------
+	// Function toggleSign()
+	// Role : toggle +/-
+	//-----------------------------------------------------------------------------
+	$scope.toggleSign = function() {
+		console.log("[toggleSign]- Begin");
+		if ($scope.sign=='+') {
+			$scope.sign='-';
+			$scope.setOverview('asset')
+			//console.log("[toggleSign]- -");
+		}
+		else {
+			$scope.sign='+';
+			$scope.setOverview('browsedInstrument')
+			//console.log("[toggleSign]- +");
+		}
+	}
 	
 	
 	//-----------------------------------------------------------------------------

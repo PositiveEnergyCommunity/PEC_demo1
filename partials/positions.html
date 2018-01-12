@@ -11,7 +11,7 @@
 						</li>
 					</ul>
 					<div class="tab-content ">
-						<table class="table">
+						<table class="table table-condensed borderless">
 						<thead>
 							<tr>
 							  <th class = "text-left thPortfolio"> Instrument</th>
@@ -23,15 +23,23 @@
 							  <th class = "text-center thPortfolio">Stop</th>
 							  <th class = "text-center thPortfolio">Limit</th>
 							  <th class = "text-center thPortfolio">Duration</th>
-							  <th class = "text-center thPortfolio">Created</th>
+							  <th class = "text-left thPortfolio">Created</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat = "y in pool.tokens"> 
+							<tr ng-repeat = "y in orderlist.orders"> 
 								<td>{{y.name}}</td>
-								<td>{{y.supply}}</td>
-								<td class = "text-right">{{y.value}} {{pool.currency}}</td>
-								<td class = "text-right">{{y.supply*y.value | number:2}} {{pool.currency}}</td></tr> 
+								<td class = "text-center">{{y.type}}</td>
+								<td class = "text-center">{{y.buySell}}</td>
+								<td class = "text-center">{{y.amount}}</td>
+								<td class = "text-center">{{y.price | number:2}} {{pool.currency}}</td>
+								<td class = "text-center">{{y.current | number:2}} {{pool.currency}}</td>
+								<td class = "text-center">{{y.stop | number:2}}</td>
+								<td class = "text-center">{{y.limit | number:2}}</td>
+								<td class = "text-center">{{y.duration}}</td>
+								<td class = "text-left">{{y.created | date:'MMM d - HH:mm'}}
+								<button type="button" class="btn btn-primary btn-xs pull-right disabled">Cancel</button></td>
+							</tr> 
 						</tbody>
 						</table>
 					</div>

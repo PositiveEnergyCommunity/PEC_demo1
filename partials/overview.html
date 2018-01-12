@@ -39,13 +39,13 @@
 							</thead>
 							<tbody>
 								<tr> 
-									<td class = "text-left"	>Jan 4-12:07</td>
+									<td class = "text-left"	>{{ (date-60000*554) | date:'MMM d - HH:mm' }}</td>
 									<td class = "text-center">19.55</td>
 									<td class = "text-center"  ng-class="{ green: +2.21 >= 0 }">2.21%</td>
 									<td class = "text-center">885.00</td>
 									<td class = "text-center">886.50</td>
 									<td class = "text-center">200</td>
-									<td class = "text-center">Jan 4-12:15</td>
+									<td class = "text-center">{{ (date-60000*2) | date:'MMM d - HH:mm' }}</td>
 								</tr>
 							</tbody>
 							</table>
@@ -54,18 +54,22 @@
 							</div>
 						</div>
 						
-						<div class="tab-content marginTab" ng-show="testOverview('asset')">
+						<div class="tab-content overflowTab" ng-show="testOverview('asset')">
 							<div ng-include="'partials/portfolioAsset.html'"></div>
 						</div>
 						
-						<div class="tab-content marginTab" ng-show="testOverview('pool')">
+						<div class="tab-content overflowTab" ng-show="testOverview('pool')">
 							<div ng-include="'partials/portfolioPool.html'"></div>
+						</div>
+						
+						<div class="tab-content overflowTab" ng-show="testOverview('browsedInstrument')">
+							<div ng-include="'partials/portfolioInstrument.html'"></div>
 						</div>
 						
 						</div>	<!-- end of div ng-init selectedBrowseView -->
 					</div>	
 					
-					<div class="tab-content marginTab" ng-show="selectedTab == 2">
+					<div class="tab-content overflowTab" ng-show="selectedTab == 2">
 						<table class="table table-condensed">					
 
 						<tr>

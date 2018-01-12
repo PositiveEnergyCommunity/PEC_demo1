@@ -1,21 +1,21 @@
 			<div class="panel portfolio bg-pec">
 			<div class="panel-body2 panelPortfolio">
 				
-				<div class="tabbable tabs-below" ng-init="selectedWatchlistTab = 1;"  id="tabOverview">	
+				<div class="tabbable tabs-below" ng-init="selectedWatchlistTab = 'watchlist';"  id="tabOverview">	
 					<ul class="nav nav-tabs">
-						<li ng-class="{active: selectedWatchlistTab == 1}">
-							<a  data-target="#"  ng-click="selectedWatchlistTab = 1;setOverview(1)">Watchlist</a>
+						<li ng-class="{active: selectedWatchlistTab == 'watchlist'}">
+							<a  data-target="#"  ng-click="selectedWatchlistTab = 'watchlist';setOverview('instrument')">Watchlist</a>
 						</li>
-						<li ng-class="{active: selectedWatchlistTab == 2}">
-                     <a data-target="#" ng-click="selectedWatchlistTab = 2;">Alerts</a>
+						<li ng-class="{active: selectedWatchlistTab == 'alertlist'}">
+                     <a data-target="#" ng-click="selectedWatchlistTab = 'alertlist';">Alerts</a>
                   </li>
-                  <li ng-class="{active: selectedWatchlistTab == 3}">
-                     <a data-target="#" ng-click="selectedWatchlistTab = 3;;setOverview('pool');">Browse</a>
+                  <li ng-class="{active: selectedWatchlistTab == 'browse'}">
+                     <a data-target="#" ng-click="selectedWatchlistTab = 'browse';setOverview('pool');">Browse</a>
                   </li>
 					</ul>
 					
 					
-					<div class="tab-content" ng-show="selectedWatchlistTab == 1">
+					<div class="tab-content" ng-show="selectedWatchlistTab == 'watchlist'">
 						<table class="table table-condensed borderless">
 						<thead>
 							<tr>
@@ -50,20 +50,20 @@
 								<td class = "text-center">2000</td>
 								<td class = "text-center">260.00</td>
 								<td class = "text-center">1200</td>
-								<td class="text-center" ng-class="{ red: -3.45 < 0 }">-3.45%</td>
+								<td class = "text-center" ng-class="{ red: -3.45 < 0 }">-3.45%</td>
 							</tr>
 						</tbody>
 						</table>
 					</div>
 					
-					<div class="tab-content marginTab" ng-show="selectedWatchlistTab == 2">
+					<div class="tab-content marginTab" ng-show="selectedWatchlistTab == 'alertlist'">
 						<p> Here, we will display Alerts </p>
 					</div>
 					
-					<div class="tab-content" ng-show="selectedWatchlistTab == 3">
-						<div ng-init="selectedBrowseView = 1;">
+					<div class="tab-content" ng-show="selectedWatchlistTab == 'browse'">
+						<div ng-init="selectedBrowseView = 'poollist';">
 						
-						<div ng-show="selectedBrowseView == 1">
+						<div ng-show="selectedBrowseView == 'poollist'">
 							<table class="table table-condensed borderless">
 								<thead>
 									<tr>
@@ -71,44 +71,63 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr class="active" data-target="#" ng-click="selectedBrowseView = 2;">
-										<td >SunSeap_Solar_SEA_A - Solar Asia</td>
-									</td></tr>
-									
-									<tr data-target="#" ng-click="selectedBrowseView = 3;">
-										<td>Moser Baer_Solar_India_A - Solar India</td>
+									<tr class="active">
+										<td>SunSeap_Solar_SEA_A - Solar Asia 
+											<button type="button" class="btn btn-primary btn-xs pull-right" 
+											ng-click="selectedBrowseView = 'instrumentlist';setOverview('browsedInstrument');" data-target="#">></button>
+										</td>
+									</tr>
+					
+					
+									<tr>
+										<td>Moser Baer_Solar_India_A - Solar India
+											<button type="button" class="btn btn-primary btn-xs pull-right disabled">></button>
+										</td>
 									</tr>
 									
-									<tr data-target="#" ng-click="selectedBrowseView = 4;">
-										<td>Moser Baer_Wind_India_A - Wind India</td>
-									</td></tr>
+									<tr>
+										<td>Moser Baer_Wind_India_A - Wind India
+											<button type="button" class="btn btn-primary btn-xs pull-right disabled">></button>
+										</td>
+									</tr>
 									
 									<tr><td> </br> </td></tr>
+									
+									<tr>
+										<td>Featured New Pools
+											<button type="button" class="btn btn-primary btn-xs pull-right disabled">></button>
+										</td>
+									</tr>
+									
+									<tr><td> </br> </td></tr>
+									
+									<tr>
+										<td>Stocks by Region
+											<button type="button" class="btn btn-primary btn-xs pull-right disabled">></button>
+										</td>
+									</tr>
 
-									<tr data-target="#" ng-click="selectedBrowseView = 5;">
-										<td>Featured New Pools</td>
+									<tr>
+										<td>Bonds Developed Markets
+											<button type="button" class="btn btn-primary btn-xs pull-right disabled">></button>
+										</td>
 									</tr>
-									
-									<tr><td> </br> </td></tr>
-									
-									<tr data-target="#" ng-click="selectedBrowseView = 6;">
-										<td>Stocks by Region</td>
-									</tr>
-									
-									<tr data-target="#" ng-click="selectedBrowseView = 7;">
-										<td>Bonds Developed Markets</td>
-									</tr>
-									
-									<tr data-target="#" ng-click="selectedBrowseView = 8;">
-										<td>Bonds Emerging Markets</td>
+
+									<tr>
+										<td>Bonds Emerging Markets
+											<button type="button" class="btn btn-primary btn-xs pull-right disabled">></button>
+										</td>
 									</tr>
 								</tbody>
 							</table>
 					</div>
 					
-					<div ng-show="selectedBrowseView == 2">
+					<div  class ="overflowTab" ng-show="selectedBrowseView == 'instrumentlist'">
+						<div  class="marginTab">
+							<p> <b>SunSeap_Solar_SEA_A - Solar Asia</b></p>
+						</div>
 						<div>
-							<table class="table table-hover table-condensed borderless">
+							<table class="table table-condensed borderless">
 								<thead>
 									<tr>
 									  <th class = "text-left thPortfolio"> Instrument</th>
@@ -120,21 +139,22 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr data-toggle="collapse" data-target="#myAsset" class="clickable"> 
+									<tr ng-class="{active: testOverview('browsedInstrument')}"> 
 										<td>Energy PPA Bond Token</td>
 										<td class = "text-center">39.00</td>
 										<td class = "text-center">39.00</td>
 										<td class = "text-center">39.05</td>
 										<td class = "text-center" ng-class="{ green: +0.00 >= 0 }">0.00%</td>
-										<td class = "text-center">0.00</td>
+										<td class = "text-center">0.00
+										<button type="button" class="btn btn-primary btn-xs pull-right" data-toggle="collapse" data-target="#myAsset" ng-click="toggleSign();">{{sign}}</button></td>
 									</tr>
 									<tr id="myAsset" class="collapse">
 										<td colspan="6">
-											<table class="table table-hover table-condensed borderless">
-												<tr data-target="#" ng-click="setOverview('asset')"><td>
+											<table class="table table-condensed borderless">
+												<tr class = "active" data-target="#" ng-click="setOverview('asset')"><td>
 													Block 311B Clementi Rooftop PV Asset
 												</td></tr>
-												<tr data-target="#" ng-click="setOverview('asset')"><td>
+												<tr"><td>
 													Block 71 One North Rooftop PV Asset
 												</td></tr>
 											</table>
@@ -146,7 +166,8 @@
 										<td class = "text-center">96.40</td>
 										<td class = "text-center">96.45</td>
 										<td class = "text-center" ng-class="{ green: +0.10 > 0 }">0.10%</td>
-										<td class = "text-center">0.10</td>
+										<td class = "text-center">0.10
+										<button type="button" class="btn btn-primary btn-xs pull-right disabled">+</button></td>
 									</tr>
 									<tr> 
 										<td>Energy PPA Purchase Token</td>
@@ -154,7 +175,8 @@
 										<td class = "text-center">66.45</td>
 										<td class = "text-center">66.60</td>
 										<td class = "text-center" ng-class="{ green: +0.54 > 0 }">0.54%</td>
-										<td class = "text-center">0.35</td>
+										<td class = "text-center">0.35
+										<button type="button" class="btn btn-primary btn-xs pull-right disabled">+</button></td>
 									</tr>
 									
 									<tr> 
@@ -163,7 +185,8 @@
 										<td class = "text-center">7.23</td>
 										<td class = "text-center">7.24</td>
 										<td class = "text-center" ng-class="{ red: -3.21 < 0 }">-3.21%</td>
-										<td class = "text-center">-0.24</td>
+										<td class = "text-center">-0.24
+										<button type="button" class="btn btn-primary btn-xs pull-right disabled">+</button></td>
 									</tr>
 									
 									<tr> 
@@ -172,7 +195,8 @@
 										<td class = "text-center">7.23</td>
 										<td class = "text-center">7.24</td>
 										<td class = "text-center" ng-class="{ red: -3.21 < 0 }">-3.21%</td>
-										<td class = "text-center">-0.24</td>
+										<td class = "text-center">-0.24
+										<button type="button" class="btn btn-primary btn-xs pull-right disabled">+</button></td>
 									</tr>
 									
 								</tbody>
@@ -180,14 +204,14 @@
 						</div>
 						
 						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal" ng-click= "goToAsset()">Details</button>
-							<button type="button" class="btn btn-default" data-target="#"  ng-click="selectedBrowseView = 1;">Add</button>
-							<button type="button" class="btn btn-default" data-target="#"  ng-click="selectedBrowseView = 1;">Back</button>
+							<button type="button" class="btn btn-primary btn-xs " data-target="#"  ng-click="selectedWatchlistTab='watchlist'; selectedBrowseView='poollist'; setOverview('instrument');">Add to Watchlist</button>
+							<button type="button" class="btn btn-primary btn-xs " data-target="#"  ng-click="selectedBrowseView = 'poollist';setOverview('pool');">Back</button>							
 						</div>
 					</div>
 					
 					<div ng-show="selectedBrowseView == 3">
 						<div>
+							<p> <b>Moser Baer_Solar_India_A - Solar India</b></p>
 							<table class="table table-condensed">
 								<thead>
 									<tr>

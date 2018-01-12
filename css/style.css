@@ -191,11 +191,13 @@ h2 {
     color:#E0E0E0;
 }
 
+.overflowTab {
+	height: 350px;
+	overflow: auto;
+}
 .marginTab {
 	margin:10px;
 	margin-right: 0px;
-	height: 350px;
-	overflow: auto;
 }
 .red {
 	color: red;

@@ -20,9 +20,9 @@
 			<div class="panel-heading">Personal details</div>
 			<div class="panel-body">
 				<div class="row section rowpad">
-					<div class="col-xs-4">Title:</div>
+					<div class="col-xs-4">Prefix:</div>
 					<div class="col-xs-6">
-						<input type="text" class="form-control text-left" ng-model="user.title"></input>  
+						<input type="text" class="form-control text-left" ng-model="user.prefix"></input>  
 					</div>
 					<div class="col-xs-1"></div>
 				</div>
@@ -88,6 +88,23 @@
 							<label><input type="radio" value="Investor" ng-model="user.profile" ></input>Investor</label>
 						</div>  
 					</div>	
+					<div class="col-xs-1"></div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Professional title:</div>
+					<div class="col-xs-6">
+						<input type="text" class="form-control text-left" ng-model="user.title"></input>  
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+				
+				<div class="row section rowpad">
+					<div class="col-xs-4">Short Bio:</div>
+					<div class="col-xs-6">
+						<!--<input type="text"  maxlength="500" rows="5"  class="form-control text-left" ng-model="user.desscription"></input>  -->
+						<textarea class="form-control" rows="3" style="resize:none" ng-model="user.description"></textarea>
+					</div>
 					<div class="col-xs-1"></div>
 				</div>
 

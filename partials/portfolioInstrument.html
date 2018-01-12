@@ -1,0 +1,77 @@
+<div>
+	<div class="marginTab">
+	<p> <b>Energy PPA Bond Token</b></p>
+	</div>
+	
+		<table class="table table-condensed borderless table-disable-hover">
+			<thead>
+				<tr>
+				   <th class = "text-left thPortfolio col-md-3"> Key facts</th>
+				   <th class="col-md-4"> </th>
+
+  				   <th class="col-md-2"> </th>
+  				   <th class="col-md-3"> </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+
+					<td>Volume :</td>
+					<td>30 million USD</td>
+
+					<td>Token value :</td>
+					<td>1 USD</td>
+
+				</tr>
+				<tr>
+			
+					<td>Coupon :</td>
+					<td>1.5%</td>
+
+					<td>Maturity :</td>
+					<td>12th Sept. 2034</td>
+					 
+				</tr>
+				<tr>
+			
+					<td>Coupon payment :</td>
+					<td>Every 12th Sept., starting 12th Sept.2017</td>
+
+					<td>Guarantor :</td>
+					<td>Pool's owner</td>
+					<td></td>					 
+				</tr>
+			</tbody>
+		</table>
+
+	
+	<table class="table table-disable-hover">
+		<thead>
+			<tr>
+			  <th class = "text-left thPortfolio"> Last traded</th>
+			  <th class = "text-center thPortfolio">Net change</th>
+			  <th class = "text-center thPortfolio">%Change</th>
+			  <th class = "text-center thPortfolio">Low</th>
+			  <th class = "text-center thPortfolio">High</th>
+			  <th class = "text-center thPortfolio">Volume</th>
+			  <th class = "text-center thPortfolio">Last update</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr> 
+				<td class = "text-left"	>{{ (date-60000*150) | date:'MMM d - HH:mm' }}</td>
+				<td class = "text-center">0.00</td>
+				<td class = "text-center"  ng-class="{ green: +2.21 >= 0 }">0%</td>
+				<td class = "text-center">38.00</td>
+				<td class = "text-center">39.80</td>
+				<td class = "text-center">500</td>
+				<td class = "text-center">{{ (date-120000) | date:'MMM d - HH:mm' }}</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class=" active" id="1">
+		<img src="{{image1.src}}" class="img-rounded" alt="{{image1.alt}}" style="width:100%"></img>
+	</div>
+							
+</div>

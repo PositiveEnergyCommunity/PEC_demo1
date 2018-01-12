@@ -12,13 +12,17 @@ angular.module("pecDemo")
 	
 	$rootScope.user = {
 		email: 'warren@gold.com',
+		password: 'warren',
 		firstname: 'Warren',
 		lastname: 'Buffet',
-		title: 'Gourou',
+		prefix: 'Gourou',
 		phone: '8888 8888',
-		password: 'warren',
-		profile: 'Investor',
-		userStatus: 'active'
+		userStatus: 'active',
+		company_Id:'',
+		title:'Chief Investor',
+		portfolio_Id:'',
+		profile: 'investor',
+		description:''
 	}
 	
 	$scope.passwordConf = 'warren';
@@ -73,9 +77,15 @@ angular.module("pecDemo")
 				$rootScope.user.email = response.data.user.email;
 				$rootScope.user.firstname = response.data.user.firstname;
 				$rootScope.user.lastname = response.data.user.lastname;
-				$rootScope.user.title = response.data.user.title;
+				$rootScope.user.prefix = response.data.user.prefix;
 				$rootScope.user.phone = response.data.user.phone;
+				$rootScope.user.userStatus = response.data.user.userStatus;
 				$scope.company = response.data.company;
+				$rootScope.user.title = response.data.user.title;
+				$rootScope.user.portfolio_Id = response.data.user.portfolio_Id;
+				$rootScope.user.profile = response.data.user.profile;
+				$rootScope.user.description = response.data.user.description;
+				
 				console.log("[profileCtrl init]- token = " +$localStorage.token);
 				},
 				function error(err) {
@@ -90,8 +100,7 @@ angular.module("pecDemo")
 	};
 	
 	init();
-	
-	
+
 	//-----------------------------------------------------------------------------
 	// Function update()
 	// Role : Update user's information
@@ -112,9 +121,12 @@ angular.module("pecDemo")
 			'password': $rootScope.user.password,
 			'passwordConf': $scope.passwordConf,
 			'phone': $rootScope.user.phone,
-			'profile': $rootScope.user.profile,
 			'userStatus': $rootScope.user.userStatus,
-			'company': $scope.company};
+			'company': $scope.company,
+			'title': $rootScope.user.title,
+			'portfolio_Id': $rootScope.user.portfolio_Id,
+			'profile': $rootScope.user.profile,
+			'description': $rootScope.user.description,};
 		
 		$http.put( $rootScope.serverBaseUrl + "/user/", inData).then(function (data, status, headers, config) { 
 			console.log("[update]- data = " + data);
