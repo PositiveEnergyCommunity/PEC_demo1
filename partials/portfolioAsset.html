@@ -1,28 +1,76 @@
-<div>
-<p> Block 311B Clementi Rooftop PV Asset</p>
-<div id="tabAsset" class="tabbable tabs-below" ng-init="selectedAssetTab = 1;">	
+<div class="marginTab">
+<p> <b>SunSeap_Solar_SG_2MW_Dec2017-Clementi</b></p>
+<div id="tabAsset" class="tabbable tabs-below" ng-init="selectedAssetTab = 'profile';">	
 	<ul class="nav nav-tabs">
-		<li ng-class="{active: selectedAssetTab == 1}">
-			<a  data-target="#"  ng-click="selectedAssetTab = 1;">Overview</a>
+		<li ng-class="{active: selectedAssetTab == 'profile'}">
+			<a  data-target="#"  ng-click="selectedAssetTab = 'profile';">Key facts</a>
 		</li>
-		<li ng-class="{active: selectedAssetTab == 2}">
-			<a data-target="#" ng-click="selectedAssetTab = 2;">Energy</a>
+		<li ng-class="{active: selectedAssetTab == 'costs'}">
+			<a data-target="#" ng-click="selectedAssetTab =  'costs';">Costs</a>
 		</li>
-		<li ng-class="{active: selectedAssetTab == 3}">
-			<a data-target="#" ng-click="selectedAssetTab = 3;">Costs</a>
+		<li ng-class="{active: selectedAssetTab == 'financing'}">
+			<a data-target="#" ng-click="selectedAssetTab = 'financing';">Financing</a>
 		</li>
-		<li ng-class="{active: selectedAssetTab == 4}">
-			<a data-target="#" ng-click="selectedAssetTab = 4;">Financing</a>
+		<li ng-class="{active: selectedAssetTab == 'developer'}">
+			<a data-target="#" ng-click="selectedAssetTab = 'developer';">Developer</a>
 		</li>
-		<li ng-class="{active: selectedAssetTab == 5}">
-			<a data-target="#" ng-click="selectedAssetTab = 5;">Developer</a>
+		<li ng-class="{active: selectedAssetTab == 'dataroom'}">
+			<a data-target="#" ng-click="selectedAssetTab = 'dataroom';">Dataroom</a>
 		</li>
-		<li ng-class="{active: selectedAssetTab == 6}">
-			<a data-target="#" ng-click="selectedAssetTab = 6;">Dataroom</a>
+		<li ng-class="{active: selectedAssetTab == 'news'}">
+			<a data-target="#" ng-click="selectedAssetTab = 'news';">News</a>
 		</li>
 	</ul>
 	
-	<div class="tab_content" ng-show="selectedAssetTab == 1">
+	<div class="tab_content" ng-show="selectedAssetTab == 'profile'">
+		
+		<table class="table table-condensed borderless table-disable-hover">		
+			<tbody>
+				<tr>
+					<td class="col-md-3">Type</td>
+					<td class="col-md-3">Solar<!--{{energyType}}--></td>
+
+					<td class="col-md-3">Developer</td>
+					<td class="col-md-3">SunSeap<!--{{developer}}--></td>
+
+				</tr>
+				<tr>
+					<td>Installed Capacity</td>
+					<td>2 MWp<!--{{installedCapacity | number}} kWp--> </td>
+
+					<td>Location</td>
+					<td>
+						<table class="addressTable">
+						<tbody>
+							<tr><td> Block311B Clementi Avenue 4	<!--{{address.street}}--> </td></tr>
+							<tr><td> 122311 Singapore<!--{{address.zipcode}}, {{address.city}}--> </td></tr>
+							<tr><td> Singapore<!--{{address.province}}, {{address.country}}--> </td></tr>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					 <td>Start date</td>
+					 <td>12 Sep. 2016<!--{{dateOfCreation}}--></td>
+
+					 <td>Commission date</td>
+					 <td>25 Apr. 2017<!--{{dateOfCommission}}--></td>
+				</tr>
+				<tr>
+					<td>Life Duration</td>
+					<td>25<!--{{lifeDuration}}--> years</td>
+					<td>Degression</td>
+					<td>0.5<!--{{degression}}-->%</td>
+
+				</tr>
+				<tr>
+					<td>Specific Yield</td>
+					<td>{{specificYield | number}} kWh/kWp/year</td>				
+
+				</tr>				
+			</tbody>
+		</table>
+		
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
@@ -58,68 +106,12 @@
 				<span class="glyphicon glyphicon-chevron-right"></span>
 				<span class="sr-only">Next</span>
 			</a>
-		</div>
-		
-		<table class="table table-condensed">
-			<tbody>
-				<tr>
-					<td>Developer</td>
-					<td>{{developer}}</td>
-				</tr>
-				<tr>
-					<td>Location</td>
-					<td>
-						<table class="addressTable">
-						<tbody>
-							<tr><td> {{address.street}} </td></tr>
-							<tr><td> {{address.zipcode}}, {{address.city}} </td></tr>
-							<tr><td> {{address.province}}, {{address.country}} </td></tr>
-						</tbody>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					 <td>Start date</td>
-					 <td>{{dateOfCreation}}</td>
-				</tr>
-				<tr>
-					 <td>Commission date</td>
-					 <td>{{dateOfCommission}}</td>
-				</tr>
-			</tbody>
-		</table>
+		</div>		
 					
 	</div>
 	
-	<div class="tab_content" ng-show="selectedAssetTab == 2">
-		<table class="table table-condensed">
-			<tbody>
-				<tr>
-					<td>Type</td>
-					<td>{{energyType}}</td>
-				</tr>
-				<tr>
-					<td>Installed Capacity</td>
-					<td>{{installedCapacity | number}} kWp </td>
-				</tr>
-				<tr>
-					<td>Life Duration</td>
-					<td>{{lifeDuration}} years</td>
-				</tr>
-				<tr>
-					<td>Specific Yield</td>
-					<td>{{specificYield | number}} kWh/kWp/year</td>
-				</tr>
-				<tr>
-					<td>Degression</td>
-					<td>{{degression}}%</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	
-	<div class="tab_content" ng-show="selectedAssetTab == 3">
-		<table class="table table-condensed">
+	<div class="tab_content" ng-show="selectedAssetTab == 'costs'">
+		<table class="table table-condensed borderless table-disable-hover"">
 			<tbody>
 				<tr>
 					<td>Project costs</td>
@@ -145,8 +137,8 @@
 		</table>
 	</div>
 	
-	<div class="tab_content" ng-show="selectedAssetTab == 4">
-		<table class="table table-condensed">
+	<div class="tab_content" ng-show="selectedAssetTab == 'financing'">
+		<table class="table table-condensed borderless table-disable-hover"">
 			<tbody>
 				<tr>
 					<td>Equity</td>
@@ -180,17 +172,21 @@
 		</table>
 	</div>
 	
-	<div class="tab_content" ng-show="selectedAssetTab == 5">
+	<div class="tab_content marginTab" ng-show="selectedAssetTab == 'developer'">
 		<p>Here the Asset Developer will be presented : Id, Track record, etc</p>
 	</div>
 	
-	<div class="tab_content" ng-show="selectedAssetTab == 6">
+	<div class="tab_content" ng-show="selectedAssetTab == 'dataroom'">
 
 			<div style="padding: 10px;">
 				<div>Project Data Room</div>
 				<div tree-view="structure" tree-view-options="options"></div>
 			</div>
 
+	</div>
+	
+	<div class="tab_content marginTab" ng-show="selectedAssetTab == 'news'">
+		<p>News related to the asset will be displayed here.</p>
 	</div>
 </div>
 </div>

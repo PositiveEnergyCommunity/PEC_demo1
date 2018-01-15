@@ -3,7 +3,7 @@
 <div id="tabAsset" class="tabbable tabs-below" ng-init="selectedAssetTab = 'overview';">	
 	<ul class="nav nav-tabs">
 		<li ng-class="{active: selectedAssetTab == 'overview'}">
-			<a  data-target="#"  ng-click="selectedAssetTab = 'overview';">Overview</a>
+			<a  data-target="#"  ng-click="selectedAssetTab = 'overview';">Profile</a>
 		</li>
 		<li ng-class="{active: selectedAssetTab == 'governance'}">
 			<a data-target="#" ng-click="selectedAssetTab = 'governance';">Governance</a>
@@ -16,6 +16,9 @@
 		</li>
 		<li ng-class="{active: selectedAssetTab == 'assets'}">
 			<a data-target="#" ng-click="selectedAssetTab = 'assets';">Assets</a>
+		<li ng-class="{active: selectedAssetTab == 'assets'}">
+			<a data-target="#" ng-click="selectedAssetTab = 'news';">News</a>
+		</li>
 		</li>
 	</ul>
 	
@@ -107,7 +110,7 @@
 					
 	</div>
 	
-	<div class="tab_content" ng-show="selectedAssetTab == 'governance'">
+	<div class="tab_content marginTab" ng-show="selectedAssetTab == 'governance'">
 		Here we will display the Pool Manager details<br>
 		Company details<br>
 		Managers Profiles<br>
@@ -116,7 +119,7 @@
 		Linkedin profile link<br>
 	</div>
 	
-	<div class="tab_content" ng-show="selectedAssetTab == 'analysis'">
+	<div class="tab_content marginTab" ng-show="selectedAssetTab == 'analysis'">
 		Here we will display the Pool's financial performances<br>
 		and analysis<br>
 		Pool Analysis:<br>
@@ -131,13 +134,17 @@
 
 	</div>
 	
-	<div class="tab_content" ng-show="selectedAssetTab == 'instruments'">
+	<div class="tab_content marginTab" ng-show="selectedAssetTab == 'instruments'">
 		Here we will display the Pool's instruments<br>
 
 	</div>
 	
-	<div class="tab_content" ng-show="selectedAssetTab == 'assets'">
+	<div class="tab_content marginTab" ng-show="selectedAssetTab == 'assets'">
 		<p>Here the pool assets will be listed</p>
+	</div>
+	
+	<div class="tab_content marginTab" ng-show="selectedAssetTab == 'news'">
+		<p>Here the pool news / updates will be displayed</p>
 	</div>
 	
 </div>
