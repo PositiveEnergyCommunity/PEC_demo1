@@ -190,7 +190,12 @@ h2 {
     background: #323232;
     color:#E0E0E0;
 }
-
+.bg-pec2 {
+	background: #A0A0A0;
+	color: #323232;
+	border:none;
+}
+	
 .overflowTab {
 	height: 350px;
 	overflow: auto;

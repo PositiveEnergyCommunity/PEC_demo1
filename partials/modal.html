@@ -1,4 +1,4 @@
-<!-- Modal -->
+	<!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog" ng-init="selectedModal = 1;">
 	<div class="modal-dialog modal-sm">
 	 
@@ -29,14 +29,27 @@
 							<td class = "align-left col-md-4">
 								<table>
 									<thead><tr><th class = "text-left col-md-4">Order Type</th></tr></thead>
-									<tbody><tr><td class = "text-left col-md-4">Limit Order</td></tr></tbody>
+									<tbody><tr><td class = "text-left col-md-4">
+										<div class="dropdown">
+											<div class="dropdown-toggle" href="#" data-toggle="dropdown">{{orderType}}
+											<span class="caret"></span></div>
+											<ul class="dropdown-menu">
+												<li><a data-target="#" ng-click="orderType='Order Limit';">Order Limit</a></li>
+												<li><a data-target="#" ng-click="orderType='Stop';">Stop</a></li>
+												<li><a data-target="#" ng-click="orderType='Stop Loss';">Stop Loss</a></li>
+												<li><a data-target="#" ng-click="orderType='Immediate';">Immediate</a></li>
+											</ul>
+										</div> 
+									</td></tr></tbody>
 								</table>
 							</td>
 							
 							<td class = "text-left col-md-4">
 								<table>
 									<thead><tr><th class = "text-left col-md-4">Quantity</th></tr></thead>
-									<tbody><tr><td class = "text-left col-md-4">1000</td></tr></tbody>
+									<tbody><tr><td class = "text-left col-md-4">
+										<input class="form-control input-sm col-sm-3 bg-pec2" type="text" value="1000"></input>
+										</td></tr></tbody>
 								</table>							
 							</td>
 						</tr>
@@ -45,14 +58,28 @@
 							<td class = "text-left col-md-4">
 								<table>
 									<thead><tr><th class = "text-left col-md-4">Duration</th></tr></thead>
-									<tbody><tr><td class = "text-left col-md-4">G.T.C.</td></tr></tbody>
+									<tbody><tr><td class = "text-left col-md-4">
+										<div class="dropdown">
+											<div class="dropdown-toggle" href="#" data-toggle="dropdown">{{orderDuration}}
+											<span class="caret"></span></div>
+											<ul class="dropdown-menu">
+												<li><a data-target="#" ng-click="orderDuration='G.T.C.';">G.T.C.</a></li>
+												<li><a data-target="#" ng-click="orderDuration='G.T.D.';">G.T.D.</a></li>
+												<li><a data-target="#" ng-click="orderDuration='I.O.C.';">I.O.C.</a></li>
+												<li><a data-target="#" ng-click="orderDuration='F.O.K.';">F.O.K.</a></li>
+												<li><a data-target="#" ng-click="orderDuration='Day';">Day</a></li>
+												<li><a data-target="#" ng-click="orderDuration='Minute';">Minute</a></li>
+											</ul>
+										</div>
+									</td></tr></tbody>
 								</table>
 							</td>
 							
 							<td class = "text-left col-md-4">
 								<table>
 									<thead><tr><th class = "text-left col-md-4">Price</th></tr></thead>
-									<tbody><tr><td class = "text-left col-md-4">38.50 USD</td></tr></tbody>
+									<tbody><tr><td class = "text-left col-md-4">
+									<input class="form-control input-sm col-sm-3 bg-pec2" type="text" value="38.50 USD"></input></td></tr></tbody>
 								</table>							
 							</td>
 						</tr>

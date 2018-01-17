@@ -37,8 +37,12 @@
 								<td class = "text-center">{{y.stop | number:2}}</td>
 								<td class = "text-center">{{y.limit | number:2}}</td>
 								<td class = "text-center">{{y.duration}}</td>
-								<td class = "text-left">{{y.created | date:'MMM d - HH:mm'}}
-								<button type="button" class="btn btn-primary btn-xs pull-right disabled">Cancel</button></td>
+								<td class = "text-left">{{y.created | date:'MMM d - HH:mm'}} 
+									<div class="pull-right">
+										<button type="button" class="btn btn-primary btn-xs disabled">Update</button>&nbsp;&nbsp;
+										<button type="button" class="btn btn-primary btn-xs disabled">Cancel</button>
+									</div>
+								</td>
 							</tr> 
 						</tbody>
 						</table>

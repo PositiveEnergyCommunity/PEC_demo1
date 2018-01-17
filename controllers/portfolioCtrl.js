@@ -96,6 +96,9 @@ angular.module("pecDemo")
 	};
 	
 	$scope.sign='+';
+	
+	$scope.orderType="Limit Order";
+	$scope.orderDuration="G.T.C.";
 					
 	
 	//-----------------------------------------------------------------------------
